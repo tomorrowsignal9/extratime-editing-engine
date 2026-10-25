@@ -1,0 +1,154 @@
+{
+  "status": "passed",
+  "reference": "Supplied exact SRT phrase anchors; not input to alignment",
+  "limitation": "Phrase-level agreement does not establish word-level accuracy. Listen and review every word before production.",
+  "wordCount": 64,
+  "cueCount": 21,
+  "maxStartError": 0.41000000000000014,
+  "medianStartError": 0.07000000000000028,
+  "sourceDuration": 30.2759375,
+  "lastWordEnd": 30.11,
+  "warnings": [],
+  "anchors": [
+    {
+      "cue": 1,
+      "text": "ONLY ONE GOALKEEPER",
+      "referenceStart": 0,
+      "referenceEnd": 1.7,
+      "alignedStart": 0.09,
+      "alignedEnd": 1.47,
+      "startError": 0.09,
+      "endError": 0.22999999999999998
+    },
+    {
+      "cue": 2,
+      "text": "HAS EVER WON THE BALLON D'OR.",
+      "referenceStart": 1.7,
+      "referenceEnd": 3.78,
+      "alignedStart": 1.47,
+      "alignedEnd": 3.16,
+      "startError": 0.22999999999999998,
+      "endError": 0.6199999999999997
+    },
+    {
+      "cue": 3,
+      "text": "NOT BUFFON.",
+      "referenceStart": 3.91,
+      "referenceEnd": 4.71,
+      "alignedStart": 3.91,
+      "alignedEnd": 4.72,
+      "startError": 0,
+      "endError": 0.009999999999999787
+    },
+    {
+      "cue": 4,
+      "text": "NOT NEUER.",
+      "referenceStart": 5.22,
+      "referenceEnd": 5.95,
+      "alignedStart": 5.22,
+      "alignedEnd": 5.9,
+      "startError": 0,
+      "endError": 0.04999999999999982
+    },
+    {
+      "cue": 5,
+      "text": "NOT CASILLAS.",
+      "referenceStart": 6.5,
+      "referenceEnd": 7.47,
+      "alignedStart": 6.5,
+      "alignedEnd": 7.52,
+      "startError": 0,
+      "endError": 0.04999999999999982
+    },
+    {
+      "cue": 6,
+      "text": "HIS NAME WAS LEV YASHIN.",
+      "referenceStart": 7.94,
+      "referenceEnd": 10.17,
+      "alignedStart": 8.07,
+      "alignedEnd": 10.26,
+      "startError": 0.1299999999999999,
+      "endError": 0.08999999999999986
+    },
+    {
+      "cue": 7,
+      "text": "IN 1963, HE ACHIEVED",
+      "referenceStart": 10.69,
+      "referenceEnd": 12.3,
+      "alignedStart": 10.71,
+      "alignedEnd": 12.71,
+      "startError": 0.02000000000000135,
+      "endError": 0.41000000000000014
+    },
+    {
+      "cue": 8,
+      "text": "SOMETHING NO OTHER GOALKEEPER\nHAS EVER MATCHED.",
+      "referenceStart": 12.3,
+      "referenceEnd": 15.54,
+      "alignedStart": 12.71,
+      "alignedEnd": 15.58,
+      "startError": 0.41000000000000014,
+      "endError": 0.040000000000000924
+    },
+    {
+      "cue": 9,
+      "text": "THEY CALLED HIM THE BLACK SPIDER.",
+      "referenceStart": 16.04,
+      "referenceEnd": 18.18,
+      "alignedStart": 15.95,
+      "alignedEnd": 18.29,
+      "startError": 0.08999999999999986,
+      "endError": 0.10999999999999943
+    },
+    {
+      "cue": 10,
+      "text": "WITH LIGHTNING-FAST REFLEXES\nAND FEARLESS CONTROL",
+      "referenceStart": 18.58,
+      "referenceEnd": 21.6,
+      "alignedStart": 18.58,
+      "alignedEnd": 21.33,
+      "startError": 0,
+      "endError": 0.2700000000000031
+    },
+    {
+      "cue": 11,
+      "text": "OF HIS PENALTY AREA,",
+      "referenceStart": 21.6,
+      "referenceEnd": 22.7,
+      "alignedStart": 21.33,
+      "alignedEnd": 22.38,
+      "startError": 0.2700000000000031,
+      "endError": 0.3200000000000003
+    },
+    {
+      "cue": 12,
+      "text": "YASHIN CHANGED THE WAY\nGOALKEEPERS PLAYED.",
+      "referenceStart": 22.7,
+      "referenceEnd": 24.97,
+      "alignedStart": 22.69,
+      "alignedEnd": 25.12,
+      "startError": 0.00999999999999801,
+      "endError": 0.15000000000000213
+    },
+    {
+      "cue": 13,
+      "text": "MORE THAN SIXTY YEARS LATER,\nHIS RECORD STILL STANDS.",
+      "referenceStart": 25.43,
+      "referenceEnd": 28.82,
+      "alignedStart": 25.42,
+      "alignedEnd": 28.86,
+      "startError": 0.00999999999999801,
+      "endError": 0.03999999999999915
+    },
+    {
+      "cue": 14,
+      "text": "WHO'S NEXT?",
+      "referenceStart": 29.32,
+      "referenceEnd": 30.27,
+      "alignedStart": 29.25,
+      "alignedEnd": 30.11,
+      "startError": 0.07000000000000028,
+      "endError": 0.16000000000000014
+    }
+  ]
+}

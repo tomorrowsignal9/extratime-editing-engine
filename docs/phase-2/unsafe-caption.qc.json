@@ -1,0 +1,197 @@
+{
+  "version": 1,
+  "status": "failed",
+  "manifest": "outputs/phase-2/unsafe-caption.json",
+  "video": null,
+  "checks": [
+    {
+      "name": "manifest-and-overlap",
+      "passed": true,
+      "details": "Ordered captions/words, valid scene and sound timing"
+    },
+    {
+      "name": "caption-safe-zones",
+      "passed": false,
+      "details": {
+        "method": "Browser text bounds from shared Captions component, including active-word transforms",
+        "samples": 14,
+        "safeArea": {
+          "left": 75,
+          "right": 945,
+          "top": 480,
+          "bottom": 1600
+        },
+        "failures": [
+          {
+            "cue": 1,
+            "frame": 26,
+            "missing": false,
+            "bounds": {
+              "left": 249.765625,
+              "right": 770.21875,
+              "top": 1633,
+              "bottom": 1680
+            },
+            "lines": 1
+          },
+          {
+            "cue": 2,
+            "frame": 83,
+            "missing": false,
+            "bounds": {
+              "left": 141,
+              "right": 879,
+              "top": 1633,
+              "bottom": 1680
+            },
+            "lines": 1
+          },
+          {
+            "cue": 3,
+            "frame": 130,
+            "missing": false,
+            "bounds": {
+              "left": 366.515625,
+              "right": 653.484375,
+              "top": 1633,
+              "bottom": 1680
+            },
+            "lines": 1
+          },
+          {
+            "cue": 4,
+            "frame": 168,
+            "missing": false,
+            "bounds": {
+              "left": 380.484375,
+              "right": 639.5,
+              "top": 1633,
+              "bottom": 1680
+            },
+            "lines": 1
+          },
+          {
+            "cue": 5,
+            "frame": 210,
+            "missing": false,
+            "bounds": {
+              "left": 349,
+              "right": 671,
+              "top": 1633,
+              "bottom": 1680
+            },
+            "lines": 1
+          },
+          {
+            "cue": 6,
+            "frame": 272,
+            "missing": false,
+            "bounds": {
+              "left": 218.265625,
+              "right": 801.71875,
+              "top": 1633,
+              "bottom": 1680
+            },
+            "lines": 1
+          },
+          {
+            "cue": 7,
+            "frame": 345,
+            "missing": false,
+            "bounds": {
+              "left": 282.03125,
+              "right": 737.96875,
+              "top": 1633,
+              "bottom": 1680
+            },
+            "lines": 1
+          },
+          {
+            "cue": 8,
+            "frame": 418,
+            "missing": false,
+            "bounds": {
+              "left": 113.296875,
+              "right": 906.6875,
+              "top": 1633,
+              "bottom": 1729.546875
+            },
+            "lines": 2
+          },
+          {
+            "cue": 9,
+            "frame": 514,
+            "missing": false,
+            "bounds": {
+              "left": 183.890625,
+              "right": 820.109375,
+              "top": 1633,
+              "bottom": 1729.546875
+            },
+            "lines": 2
+          },
+          {
+            "cue": 10,
+            "frame": 603,
+            "missing": false,
+            "bounds": {
+              "left": 157.671875,
+              "right": 862.328125,
+              "top": 1633,
+              "bottom": 1729.546875
+            },
+            "lines": 2
+          },
+          {
+            "cue": 11,
+            "frame": 665,
+            "missing": false,
+            "bounds": {
+              "left": 267.6875,
+              "right": 752.296875,
+              "top": 1633,
+              "bottom": 1680
+            },
+            "lines": 1
+          },
+          {
+            "cue": 12,
+            "frame": 716,
+            "missing": false,
+            "bounds": {
+              "left": 221,
+              "right": 799,
+              "top": 1633,
+              "bottom": 1729.546875
+            },
+            "lines": 2
+          },
+          {
+            "cue": 13,
+            "frame": 814,
+            "missing": false,
+            "bounds": {
+              "left": 158.78125,
+              "right": 861.203125,
+              "top": 1633,
+              "bottom": 1729.546875
+            },
+            "lines": 2
+          },
+          {
+            "cue": 14,
+            "frame": 894,
+            "missing": false,
+            "bounds": {
+              "left": 365,
+              "right": 654.984375,
+              "top": 1633,
+              "bottom": 1680
+            },
+            "lines": 1
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -3,6 +3,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { useState, useEffect, useCallback, useRef } from "react";
 import dynamic from "next/dynamic";
+import SmartPanel from "./SmartPanel";
 import type { StudioProject, Job } from "../../src/studio/types";
 import { Project, type ProjectData } from "../../src/engine/schema";
 import { resizeScene, preset } from "../../src/studio/timeline";
@@ -37,6 +38,7 @@ export default function Studio() {
     [doc, setDoc] = useState<StudioProject | null>(null),
     [dirty, setDirty] = useState(false),
     [busy, setBusy] = useState(false),
+    [smartBusy, setSmartBusy] = useState(false),
     [error, setError] = useState(""),
     [notice, setNotice] = useState(""),
     [title, setTitle] = useState(""),
@@ -197,7 +199,11 @@ export default function Studio() {
   const currentScene = p?.scenes[selected];
   const validation = p ? Project.safeParse({ ...p, title: doc?.title }) : null;
   return (
-    <div className="studio">
+    <div
+      className="studio"
+      inert={busy || smartBusy}
+      aria-busy={busy || smartBusy}
+    >
       <aside className="sidebar">
         <button
           className="brand"
@@ -908,7 +914,11 @@ export default function Studio() {
                               ...p,
                               captions: p.captions.map((v, j) =>
                                 i === j
-                                  ? { ...v, start: Number(e.target.value) }
+                                  ? {
+                                      ...v,
+                                      start: Number(e.target.value),
+                                      words: undefined,
+                                    }
                                   : v,
                               ),
                             })
@@ -927,7 +937,11 @@ export default function Studio() {
                               ...p,
                               captions: p.captions.map((v, j) =>
                                 i === j
-                                  ? { ...v, end: Number(e.target.value) }
+                                  ? {
+                                      ...v,
+                                      end: Number(e.target.value),
+                                      words: undefined,
+                                    }
                                   : v,
                               ),
                             })
@@ -941,7 +955,13 @@ export default function Studio() {
                           changeManifest({
                             ...p,
                             captions: p.captions.map((v, j) =>
-                              i === j ? { ...v, text: e.target.value } : v,
+                              i === j
+                                ? {
+                                    ...v,
+                                    text: e.target.value,
+                                    words: undefined,
+                                  }
+                                : v,
                             ),
                           })
                         }
@@ -956,6 +976,17 @@ export default function Studio() {
                 )}
               </section>
             )}
+            <SmartPanel
+              key={doc.id}
+              doc={doc}
+              dirty={dirty}
+              onEdit={changeManifest}
+              onBusyChange={setSmartBusy}
+              onApplied={(next) => {
+                accept(next);
+                void refresh();
+              }}
+            />
             <section className="export-panel">
               <div>
                 <div className="eyebrow">READY FOR THE FINAL CUT?</div>
@@ -1069,6 +1100,14 @@ export default function Studio() {
                 >
                   Diagnostics
                 </button>
+                <a
+                  className="button"
+                  href={`/api/studio/jobs/${job.id}/qc`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  QC report
+                </a>
               </div>
             </article>
           ))}

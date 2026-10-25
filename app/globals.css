@@ -952,3 +952,95 @@ label:focus-within {
   top: 0;
   clip-path: inset(50%);
 }
+
+.smart-panel {
+  margin-top: 20px;
+}
+.smart-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+.smart-panel label {
+  display: block;
+  margin: 12px 0;
+  color: #bdc6bd;
+  font-size: 12px;
+}
+.smart-panel .approval {
+  display: flex;
+}
+.smart-panel textarea {
+  margin: 10px 0;
+}
+.smart-panel select,
+.smart-panel label > input:not([type="checkbox"]) {
+  margin-top: 7px;
+}
+.smart-panel summary {
+  cursor: pointer;
+  color: var(--lime);
+  padding: 12px 0;
+}
+.smart-panel table {
+  width: 100%;
+  font-size: 12px;
+  text-align: left;
+  border-collapse: collapse;
+}
+.smart-panel th,
+.smart-panel td {
+  padding: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.suggestion {
+  padding: 15px;
+  background: #20291f;
+  border: 1px solid #405239;
+  border-radius: 7px;
+  margin: 15px 0;
+}
+.speech-results {
+  max-height: 230px;
+  overflow: auto;
+  font-size: 12px;
+}
+.speech-results time {
+  font-variant-numeric: tabular-nums;
+  color: #a3b395;
+}
+.word-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 8px;
+  margin: 6px 0;
+}
+.word-row input {
+  font-size: 12px;
+}
+.sound-asset,
+.sound-edit {
+  margin: 12px 0;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+.sound-asset small {
+  display: block;
+  color: var(--muted);
+  margin: 7px 0;
+}
+.sound-asset audio {
+  width: 100%;
+  height: 30px;
+  margin: 6px 0;
+}
+.smart-panel code {
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 900px) {
+  .smart-columns {
+    grid-template-columns: 1fr;
+  }
+}

@@ -2,8 +2,13 @@ import type { ProjectData } from "../engine/schema";
 export type Asset = {
   id: string;
   name: string;
-  kind: "image" | "audio" | "srt";
+  kind: "image" | "audio" | "srt" | "sound";
   path: string;
+  license?: string;
+  attribution?: string;
+  category?: "whoosh" | "impact" | "riser" | "stadium" | "music";
+  peak?: number;
+  rms?: number;
   thumbnail?: string;
   bytes: number;
   duration?: number;

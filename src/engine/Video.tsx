@@ -1,4 +1,6 @@
 import React from "react";
+import { Captions } from "./Captions";
+import { soundVolume } from "./sound";
 import {
   AbsoluteFill,
   Audio,
@@ -14,7 +16,7 @@ import type { ProjectData } from "./schema";
 export function Film({ project: p }: { project: ProjectData }) {
   const f = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const c = p.captions.find((c) => f / fps >= c.start && f / fps < c.end);
+
   return (
     <AbsoluteFill
       style={{
@@ -23,7 +25,26 @@ export function Film({ project: p }: { project: ProjectData }) {
         color: "#F5F6F0",
       }}
     >
-      <Audio src={staticFile(p.audio)} />
+      <Audio
+        src={staticFile(p.audio)}
+        volume={p.soundLayers?.some((l) => l.enabled) ? 0.9 : 1}
+      />
+      {(p.soundLayers || [])
+        .filter((l) => l.enabled)
+        .map((l) => (
+          <Sequence
+            key={l.id}
+            from={Math.round(l.start * fps)}
+            durationInFrames={Math.max(1, Math.round(l.duration * fps))}
+          >
+            <Audio
+              src={staticFile(l.asset)}
+              loop={l.loop}
+              loopVolumeCurveBehavior="extend"
+              volume={(frame) => soundVolume(p, l, frame)}
+            />
+          </Sequence>
+        ))}
       {p.scenes.map((s, i) => {
         const cursor = p.scenes.slice(0, i).reduce((n, s) => n + s.duration, 0);
         const from = Math.round(cursor * fps);
@@ -83,34 +104,7 @@ export function Film({ project: p }: { project: ProjectData }) {
           {p.title}
         </div>
       )}
-      {c && (
-        <div
-          style={{
-            position: "absolute",
-            top: `${p.captionY}%`,
-            left: 90,
-            right: 150,
-            textAlign: "center",
-            fontSize: p.captionFontSize ?? 42,
-            whiteSpace: "pre-line",
-            fontWeight: 900,
-            lineHeight: 1.18,
-            textShadow: "0 3px 8px black",
-            color: p.captionColor,
-          }}
-        >
-          <span
-            style={{
-              background: "rgba(8,15,22,.85)",
-              boxDecorationBreak: "clone",
-              padding: "8px 16px",
-              borderRadius: 10,
-            }}
-          >
-            {c.text}
-          </span>
-        </div>
-      )}
+      <Captions project={p} frame={f} />
       <div
         style={{
           position: "absolute",

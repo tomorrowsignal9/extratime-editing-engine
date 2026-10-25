@@ -9,12 +9,14 @@ import {
 import path from "node:path";
 import { spawn } from "node:child_process";
 import { jobDir, renderLock } from "../src/studio/jobs";
+import { assignCompute, releaseCompute } from "../src/studio/compute";
 import type { Job } from "../src/studio/types";
 const key = process.argv[2],
   dir = jobDir(key),
   jobPath = path.join(dir, "job.json");
 const job: Job = JSON.parse(readFileSync(jobPath, "utf8"));
 job.pid = process.pid;
+assignCompute(key, process.pid);
 job.status = "running";
 const persist = () => {
   writeFileSync(jobPath + ".tmp", JSON.stringify(job, null, 2));
@@ -30,7 +32,11 @@ const timer = setInterval(() => {
     } catch {}
   }
 }, 500);
-const run = (script: string, args: string[], env: Record<string, string> = {}) =>
+const run = (
+  script: string,
+  args: string[],
+  env: Record<string, string> = {},
+) =>
   new Promise<void>((resolve, reject) => {
     if (cancelled()) return reject(Error("Cancelled"));
     current = spawn(process.execPath, ["--import", "tsx", script, ...args], {
@@ -65,12 +71,17 @@ const run = (script: string, args: string[], env: Record<string, string> = {}) =
     });
   });
 try {
+  await run("scripts/qc.tsx", [path.join(dir, "manifest.json")]);
   await run("scripts/render.ts", [path.join(dir, "manifest.json")], {
     RENDER_OUTPUT: path.join(dir, "output.mp4"),
   });
   job.status = "verifying";
   persist();
   await run("scripts/validate.ts", [
+    path.join(dir, "manifest.json"),
+    path.join(dir, "output.mp4"),
+  ]);
+  await run("scripts/qc.tsx", [
     path.join(dir, "manifest.json"),
     path.join(dir, "output.mp4"),
   ]);
@@ -82,6 +93,7 @@ try {
   job.error = e instanceof Error ? e.message : String(e);
 } finally {
   clearInterval(timer);
+  releaseCompute(key);
   job.finishedAt = new Date().toISOString();
   persist();
   try {

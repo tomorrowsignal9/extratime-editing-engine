@@ -21,6 +21,13 @@ import {
   jobDir,
 } from "../../../../src/studio/jobs";
 import { bounded, sameOrigin, streamFile } from "../../../../src/studio/http";
+import {
+  speechStatus,
+  speechSuggestion,
+  acceptSpeech,
+  editingSuggestion,
+  acceptEdit,
+} from "../../../../src/smart/service";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 type Context = { params: Promise<{ path: string[] }> };
@@ -33,7 +40,37 @@ async function handle(req: Request, context: Context) {
     const json = async () =>
       JSON.parse((await bounded(req, 2 * 1024 * 1024)).toString());
     let result: unknown;
-    if (area === "projects" && !key && method === "GET")
+    if (area === "speech-models" && method === "GET")
+      result = await speechStatus();
+    else if (
+      area === "projects" &&
+      key &&
+      action === "speech" &&
+      method === "POST"
+    )
+      result = await speechSuggestion(key, await json());
+    else if (
+      area === "projects" &&
+      key &&
+      action === "accept-speech" &&
+      method === "POST"
+    )
+      result = await acceptSpeech(key, await json());
+    else if (
+      area === "projects" &&
+      key &&
+      action === "suggest-edit" &&
+      method === "POST"
+    )
+      result = await editingSuggestion(key, await json());
+    else if (
+      area === "projects" &&
+      key &&
+      action === "accept-edit" &&
+      method === "POST"
+    )
+      result = await acceptEdit(key, await json());
+    else if (area === "projects" && !key && method === "GET")
       result = {
         projects: await listProjects(),
         sampleAvailable: await sampleAvailable(),
@@ -81,6 +118,40 @@ async function handle(req: Request, context: Context) {
         entries,
         Number(data.get("revision")),
         data.get("replace")?.toString(),
+        data.get("soundCategory")
+          ? z
+              .object({
+                category: z.enum([
+                  "whoosh",
+                  "impact",
+                  "riser",
+                  "stadium",
+                  "music",
+                ]),
+                license: z.string().min(1).max(300),
+                attribution: z.string().max(500).optional(),
+              })
+              .parse({
+                category: data.get("soundCategory"),
+                license: data.get("license"),
+                attribution: data.get("attribution") || undefined,
+              })
+          : undefined,
+      );
+    } else if (area === "jobs" && key && action === "qc" && method === "GET") {
+      await getJob(key);
+      const dir = jobDir(key);
+      result = JSON.parse(
+        await readFile(path.join(dir, "output.qc.json"), "utf8").catch(() =>
+          readFile(path.join(dir, "manifest.qc.json"), "utf8").catch(() =>
+            JSON.stringify({
+              status: "pending",
+              checks: [],
+              message:
+                "QC has not produced a report yet. See job diagnostics if the worker stopped.",
+            }),
+          ),
+        ),
       );
     } else if (area === "jobs" && !key && method === "GET")
       result = await jobs();

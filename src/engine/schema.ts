@@ -3,22 +3,89 @@ const asset = z
   .string()
   .regex(/^media\/[a-zA-Z0-9_./-]+$/)
   .refine((s) => !s.includes(".."));
+export const Word = z
+  .object({
+    text: z.string().min(1).max(100),
+    start: z.number().nonnegative(),
+    end: z.number().positive(),
+    confidence: z.number().min(0).max(1).optional(),
+  })
+  .refine((w) => w.end > w.start);
 export const Caption = z
   .object({
     text: z.string().min(1).max(300),
+    words: z.array(Word).max(80).optional(),
     start: z.number().nonnegative(),
     end: z.number().positive(),
   })
-  .refine((c) => c.end > c.start);
+  .refine((c) => c.end > c.start)
+  .superRefine((c, ctx) => {
+    if (c.words) {
+      if (
+        c.words
+          .map((w) => w.text)
+          .join(" ")
+          .replace(/\s+/g, " ")
+          .trim() !== c.text.replace(/\s+/g, " ").trim()
+      )
+        ctx.addIssue({
+          code: "custom",
+          message: "Word text must match its caption",
+        });
+      for (let i = 0; i < c.words.length; i++) {
+        const w = c.words[i];
+        if (
+          w.start < c.start - 0.001 ||
+          w.end > c.end + 0.001 ||
+          (i > 0 && w.start < c.words[i - 1].end)
+        )
+          ctx.addIssue({
+            code: "custom",
+            message: "Word timings must be ordered and inside their caption",
+          });
+      }
+    }
+  });
 export const Project = z
   .object({
     id: z.string().regex(/^[a-z0-9-]+$/),
     title: z.string().min(1).max(150),
+    narrationScript: z.string().max(20000).optional(),
     duration: z.number().positive().max(300),
     audio: asset,
     preset: z
       .enum(["Documentary", "Fast Viral", "Legendary Stories"])
       .default("Documentary"),
+    captionStyle: z
+      .enum(["classic", "highlight", "kinetic", "minimal"])
+      .optional(),
+    captionTiming: z
+      .object({
+        method: z.string(),
+        reliable: z.boolean(),
+        reviewed: z.boolean(),
+      })
+      .optional(),
+    soundLayers: z
+      .array(
+        z.object({
+          id: z.string(),
+          asset,
+          category: z.enum(["whoosh", "impact", "riser", "stadium", "music"]),
+          start: z.number().nonnegative(),
+          duration: z.number().min(0.1),
+          volume: z.number().min(0).max(0.18),
+          enabled: z.boolean(),
+          loop: z.boolean(),
+          license: z.string().min(1).max(300),
+          attribution: z.string().max(500).optional(),
+          sourceDuration: z.number().positive(),
+          sourcePeak: z.number().positive().max(1),
+          narrationRms: z.number().positive().max(1),
+        }),
+      )
+      .max(8)
+      .optional(),
     captionFontSize: z.number().min(28).max(64).optional(),
     captionY: z.number().min(30).max(85).default(72),
     captionColor: z
@@ -54,6 +121,12 @@ export const Project = z
         code: "custom",
         message: "Scene durations must cover the complete voiceover",
       });
+    for (const layer of p.soundLayers || [])
+      if (layer.start + layer.duration > p.duration + 0.001)
+        ctx.addIssue({
+          code: "custom",
+          message: "Sound layer exceeds the timeline",
+        });
     for (const c of p.captions)
       if (c.end > p.duration + 0.05)
         ctx.addIssue({

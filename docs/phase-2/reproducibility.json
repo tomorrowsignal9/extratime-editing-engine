@@ -1,0 +1,10 @@
+{
+  "sameInputRepeatedAlignmentIdentical": true,
+  "alignmentSha256": "cfd3058e58ca82986bbc5a812d5ba9ffe5d5667315feed33033a28f0ae2de784",
+  "mp4Sha256": "6d0ee8874a75ff25d3d22c4e4dca74a293e69021856daf54ef92e7c9052c64e2",
+  "baselineCommit": "de2d3cc",
+  "baselineTests": 18,
+  "baselineLint": "passed",
+  "baselineTypecheck": "passed",
+  "baselineBuild": "passed"
+}
