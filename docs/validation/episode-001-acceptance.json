@@ -1,0 +1,28 @@
+{
+  "result": "PASS",
+  "video": "outputs/episode-001-subtitled.mp4",
+  "sha256": "f5d5659d1c15fb049de868b631ffe77a473da0ca55d1a14be4e3426cbeabe5a8",
+  "bytes": 23825571,
+  "sourceSrtSha256": "c4201c3476199809c52ce1a315cfda905a6fd1c8ba2920df092becb2c06bdf91",
+  "videoFramesScanned": 909,
+  "blackIntervals": [],
+  "blackdetectFilter": "blackdetect=d=0.02:pix_th=0.1",
+  "unitTests": {
+    "passed": 11,
+    "failed": 0
+  },
+  "lint": "passed",
+  "typecheck": "passed",
+  "renderValidation": "passed",
+  "subtitleValidation": "passed",
+  "visualInspectionCues": [
+    1,
+    6,
+    8,
+    10,
+    13,
+    14
+  ],
+  "maximumCheckedPhraseOnsetErrorMs": 8.956999999998772,
+  "whisper": "deferred to Phase 2"
+}

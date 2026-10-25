@@ -1,0 +1,32 @@
+[
+  {
+    "asset": "public/media/episode-001/VO.mp3",
+    "sha256": "79cde08774a64f9455566dda7902142e3e79b1b0eca089016ed7b607c2756cad",
+    "matchesUploadedArchive": true
+  },
+  {
+    "asset": "public/media/episode-001/scene-01.jpeg",
+    "sha256": "c8d1ca89bbc43078a64ef2f05ee91cf5358ee0a46970e85ac5e9b159361835e7",
+    "matchesUploadedArchive": true
+  },
+  {
+    "asset": "public/media/episode-001/scene-02.jpeg",
+    "sha256": "2188de809eab1e4b8b9e05d39ed555c7d9ff8999eb8ee9f90f619b930d9091b7",
+    "matchesUploadedArchive": true
+  },
+  {
+    "asset": "public/media/episode-001/scene-03.jpeg",
+    "sha256": "acb1a1b1ee51825d5bdfa257b2576da86763f27b2ff329a025c94713698e23af",
+    "matchesUploadedArchive": true
+  },
+  {
+    "asset": "public/media/episode-001/scene-04.jpeg",
+    "sha256": "71587a1d1f64767a6fbc127e40d169a3c194882b7c3171fac1c4f5869ced2ffb",
+    "matchesUploadedArchive": true
+  },
+  {
+    "asset": "public/media/episode-001/scene-05.jpeg",
+    "sha256": "7413f810912656087aa745868e4939edb88bc981efc0af4634a677a01800c0db",
+    "matchesUploadedArchive": true
+  }
+]

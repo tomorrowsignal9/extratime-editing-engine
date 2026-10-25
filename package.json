@@ -1,0 +1,41 @@
+{
+  "name": "extratime-editing-engine",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "render": "tsx scripts/render.ts",
+    "test": "tsx --test tests/*.test.ts",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "captions": "tsx scripts/apply-captions.ts",
+    "validate": "tsx scripts/validate.ts",
+    "import:project": "tsx scripts/prepare.ts",
+    "validate:subtitles": "tsx scripts/validate-subtitles.ts"
+  },
+  "dependencies": {
+    "@remotion/bundler": "4.0.538",
+    "@remotion/captions": "4.0.538",
+    "@remotion/player": "4.0.538",
+    "@remotion/renderer": "4.0.538",
+    "@remotion/transitions": "4.0.538",
+    "next": "16.2.9",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "remotion": "4.0.538",
+    "sharp": "0.34.5",
+    "zod": "4.3.6"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.0",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "eslint": "^9.39.0",
+    "eslint-config-next": "16.2.9",
+    "prettier": "3.9.10",
+    "tailwindcss": "^4.1.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  },
+  "type": "module"
+}

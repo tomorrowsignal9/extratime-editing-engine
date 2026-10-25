@@ -1,0 +1,129 @@
+{
+  "id": "episode-001",
+  "title": "The Only Goalkeeper to Win the Ballon d\u2019Or",
+  "duration": 30.3,
+  "audio": "media/episode-001/VO.mp3",
+  "preset": "Legendary Stories",
+  "captionY": 64,
+  "captionColor": "#C4EC77",
+  "approved": false,
+  "captions": [
+    {
+      "text": "ONLY ONE GOALKEEPER",
+      "start": 0,
+      "end": 1.7
+    },
+    {
+      "text": "HAS EVER WON THE BALLON D'OR.",
+      "start": 1.7,
+      "end": 3.78
+    },
+    {
+      "text": "NOT BUFFON.",
+      "start": 3.91,
+      "end": 4.71
+    },
+    {
+      "text": "NOT NEUER.",
+      "start": 5.22,
+      "end": 5.95
+    },
+    {
+      "text": "NOT CASILLAS.",
+      "start": 6.5,
+      "end": 7.47
+    },
+    {
+      "text": "HIS NAME WAS LEV YASHIN.",
+      "start": 7.94,
+      "end": 10.17
+    },
+    {
+      "text": "IN 1963, HE ACHIEVED",
+      "start": 10.69,
+      "end": 12.3
+    },
+    {
+      "text": "SOMETHING NO OTHER GOALKEEPER\nHAS EVER MATCHED.",
+      "start": 12.3,
+      "end": 15.54
+    },
+    {
+      "text": "THEY CALLED HIM THE BLACK SPIDER.",
+      "start": 16.04,
+      "end": 18.18
+    },
+    {
+      "text": "WITH LIGHTNING-FAST REFLEXES\nAND FEARLESS CONTROL",
+      "start": 18.58,
+      "end": 21.6
+    },
+    {
+      "text": "OF HIS PENALTY AREA,",
+      "start": 21.6,
+      "end": 22.7
+    },
+    {
+      "text": "YASHIN CHANGED THE WAY\nGOALKEEPERS PLAYED.",
+      "start": 22.7,
+      "end": 24.97
+    },
+    {
+      "text": "MORE THAN SIXTY YEARS LATER,\nHIS RECORD STILL STANDS.",
+      "start": 25.43,
+      "end": 28.82
+    },
+    {
+      "text": "WHO'S NEXT?",
+      "start": 29.32,
+      "end": 30.27
+    }
+  ],
+  "scenes": [
+    {
+      "asset": "media/episode-001/scene-01.jpeg",
+      "duration": 3.6,
+      "motion": "push",
+      "focalX": 0.5,
+      "focalY": 0.5,
+      "strength": 0.12,
+      "transition": "fade"
+    },
+    {
+      "asset": "media/episode-001/scene-02.jpeg",
+      "duration": 4.5,
+      "motion": "pan",
+      "focalX": 0.5,
+      "focalY": 0.5,
+      "strength": 0.12,
+      "transition": "fade"
+    },
+    {
+      "asset": "media/episode-001/scene-03.jpeg",
+      "duration": 6.9,
+      "motion": "pull",
+      "focalX": 0.5,
+      "focalY": 0.5,
+      "strength": 0.12,
+      "transition": "fade"
+    },
+    {
+      "asset": "media/episode-001/scene-04.jpeg",
+      "duration": 10.8,
+      "motion": "punch",
+      "focalX": 0.5,
+      "focalY": 0.5,
+      "strength": 0.12,
+      "transition": "fade"
+    },
+    {
+      "asset": "media/episode-001/scene-05.jpeg",
+      "duration": 4.5,
+      "motion": "push",
+      "focalX": 0.5,
+      "focalY": 0.5,
+      "strength": 0.12,
+      "transition": "fade"
+    }
+  ]
+}
