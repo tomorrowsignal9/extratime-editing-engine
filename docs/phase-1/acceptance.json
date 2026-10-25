@@ -16,5 +16,14 @@
   "videoFramesScanned": 909,
   "blackIntervals": [],
   "previewExportMeanAbsolutePixelError": 3.666771907216495,
-  "originalPhase0AssetsUnchanged": true
+  "originalPhase0AssetsUnchanged": true,
+  "cleanCheckout": {
+    "sourceCommit": "528be7e",
+    "originalMediaPresent": false,
+    "npmCi": "passed",
+    "unitTests": 18,
+    "typecheck": "passed",
+    "productionBuild": "passed",
+    "note": "Non-fatal Turbopack file-tracing warning for configurable local storage; compilation and route generation completed."
+  }
 }

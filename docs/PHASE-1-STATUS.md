@@ -22,6 +22,7 @@ New `panDirection`, `transitionDuration` and `captionFontSize` fields are option
 | Unit/storage suite | **18 passed**, including all 11 Phase 0 tests; no Episode 001 binary fixtures needed for the unit suite |
 | Lint / typecheck | **PASS** (`npm run lint`, `npm run typecheck`) |
 | Production build | **PASS** (`npm run build`) |
+| Clean checkout | **PASS** — archived commit `528be7e` into an empty directory without media or installed dependencies; `npm ci`, all 18 tests, typecheck and production build completed |
 | Full production browser suite | **2 passed**, ~1.8 minutes, against `next start` on port 3001 |
 | Create → upload → preview → edit → save → render → download | **PASS**, real Episode 001 files and actual MP4 |
 | Refresh and data protection | **PASS**: saved timeline reopens; unsaved draft recovers; stale tab save rejected with HTTP 409 |
@@ -40,6 +41,8 @@ New `panDirection`, `transitionDuration` and `captionFontSize` fields are option
 | Original media | All six Phase 0 source files retain their recorded SHA-256 checksums |
 | Legacy visual compatibility | Frames 15, 111 (transition), 420 and 908 compared against the accepted Phase 0 MP4: mean RGB errors **3.06, 2.45, 3.14, 2.56 / 255** |
 | Browser exceptions | **0** in the full export workflow |
+
+The clean-checkout build emitted a non-fatal Turbopack file-tracing warning for configurable local storage; compilation and route generation completed.
 
 The production tests additionally verify there is no horizontal page overflow at 390px width. Both development and production servers were exercised. Rendering/validation was performed on Linux; M4 hardware, Safari and Firefox were not benchmarked/tested. Pixel error includes browser scaling, font rasterization and H.264 compression; this is a tolerance comparison, not a claim of byte-identical PNG/MP4 pixels. Timing checks use the provided exact SRT and source waveform; no new speech transcription was performed.
 
