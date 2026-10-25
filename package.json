@@ -10,7 +10,11 @@
     "captions": "tsx scripts/apply-captions.ts",
     "validate": "tsx scripts/validate.ts",
     "import:project": "tsx scripts/prepare.ts",
-    "validate:subtitles": "tsx scripts/validate-subtitles.ts"
+    "validate:subtitles": "tsx scripts/validate-subtitles.ts",
+    "dev": "next dev --hostname 127.0.0.1",
+    "build": "next build",
+    "start": "next start --hostname 127.0.0.1",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "@remotion/bundler": "4.0.538",
@@ -26,6 +30,7 @@
     "zod": "4.3.6"
   },
   "devDependencies": {
+    "@playwright/test": "^1.64.1",
     "@tailwindcss/postcss": "^4.1.0",
     "@types/node": "^24.0.0",
     "@types/react": "^19.2.0",

@@ -2,11 +2,12 @@
 import { execFileSync } from "node:child_process";
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import assert from "node:assert/strict";
+import path from "node:path";
 import { Project, parseSrt } from "../src/engine/schema";
 const video = process.argv[2] || "outputs/episode-001-subtitled.mp4";
-const p = Project.parse(
-  JSON.parse(await readFile("data/projects/episode-001.json", "utf8")),
-);
+const manifestFile = process.argv[3] || "data/projects/episode-001.json";
+const evidenceRoot = process.argv[3] ? path.dirname(video) : "outputs";
+const p = Project.parse(JSON.parse(await readFile(manifestFile, "utf8")));
 const supplied = parseSrt(
   await readFile("episodes/episode-001/subtitles.srt", "utf8"),
 );
@@ -111,7 +112,7 @@ function inspect(time: number) {
     lines: bands,
   };
 }
-await mkdir("outputs/subtitle-frames", { recursive: true });
+await mkdir(path.join(evidenceRoot, "subtitle-frames"), { recursive: true });
 const cues = supplied.map((c, i) => {
   const result = inspect((c.start + c.end) / 2);
   assert.ok(result.count > 500, `Cue ${i + 1} missing from MP4`);
@@ -135,7 +136,10 @@ const cues = supplied.map((c, i) => {
     "1",
     "-vf",
     "scale=360:640",
-    `outputs/subtitle-frames/cue-${String(i + 1).padStart(2, "0")}.png`,
+    path.join(
+      evidenceRoot,
+      `subtitle-frames/cue-${String(i + 1).padStart(2, "0")}.png`,
+    ),
   ]);
   return { cue: i + 1, text: c.text, ...result };
 });
@@ -168,7 +172,7 @@ const report = {
   lastCaptionEnd: supplied.at(-1)!.end,
 };
 await writeFile(
-  "outputs/episode-001-subtitle-validation.json",
+  path.join(evidenceRoot, "episode-001-subtitle-validation.json"),
   JSON.stringify(report, null, 2),
 );
 console.log(

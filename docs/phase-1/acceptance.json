@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "baseline": "bd98dfa",
+  "testedServer": "Next.js production server on local loopback, plus development server",
+  "unitTests": 18,
+  "browserTests": 2,
+  "lint": "passed",
+  "typecheck": "passed",
+  "productionBuild": "passed",
+  "video": "outputs/phase-1/episode-001-dashboard.mp4",
+  "videoBytes": 26547489,
+  "videoSha256": "57fdd61f3592934c2220183d9ca8b48d8201ddcb99729d03de1c306af2723a9d",
+  "duration": "30.315000",
+  "audioCorrelation": 0.9999772972849303,
+  "captions": 14,
+  "videoFramesScanned": 909,
+  "blackIntervals": [],
+  "previewExportMeanAbsolutePixelError": 3.666771907216495,
+  "originalPhase0AssetsUnchanged": true
+}

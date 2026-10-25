@@ -19,6 +19,7 @@ export const Project = z
     preset: z
       .enum(["Documentary", "Fast Viral", "Legendary Stories"])
       .default("Documentary"),
+    captionFontSize: z.number().min(28).max(64).optional(),
     captionY: z.number().min(30).max(85).default(72),
     captionColor: z
       .string()
@@ -32,6 +33,8 @@ export const Project = z
           asset,
           foreground: asset.optional(),
           duration: z.number().min(0.2),
+          panDirection: z.enum(["left", "right"]).optional(),
+          transitionDuration: z.number().min(0).max(0.8).optional(),
           motion: z.enum(["push", "pan", "pull", "punch"]),
           focalX: z.number().min(0).max(1).default(0.5),
           focalY: z.number().min(0).max(1).default(0.5),

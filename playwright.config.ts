@@ -1,0 +1,2 @@
+import {defineConfig} from '@playwright/test';
+export default defineConfig({testDir:'./e2e',timeout:600000,workers:1,reporter:'list',outputDir:'outputs/e2e',use:{baseURL:process.env.STUDIO_URL||'http://127.0.0.1:3000',headless:true,viewport:{width:1440,height:1100},launchOptions:{executablePath:process.env.CHROME_PATH||'/usr/bin/chromium',args:['--no-sandbox','--disable-dev-shm-usage']},trace:'retain-on-failure'}});
