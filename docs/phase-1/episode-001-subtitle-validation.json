@@ -1,0 +1,370 @@
+{
+  "video": "outputs/phase-1/episode-001-dashboard.mp4",
+  "cueCount": 14,
+  "lastFrame": {
+    "frame": 908,
+    "time": 30.266666666666666,
+    "count": 1956,
+    "bounds": {
+      "minX": 366,
+      "maxX": 651,
+      "minY": 1240,
+      "maxY": 1267
+    },
+    "lines": 1
+  },
+  "cues": [
+    {
+      "cue": 1,
+      "text": "ONLY ONE GOALKEEPER",
+      "frame": 26,
+      "time": 0.8666666666666667,
+      "count": 3813,
+      "bounds": {
+        "minX": 252,
+        "maxX": 767,
+        "minY": 1240,
+        "maxY": 1267
+      },
+      "lines": 1
+    },
+    {
+      "cue": 2,
+      "text": "HAS EVER WON THE BALLON D'OR.",
+      "frame": 83,
+      "time": 2.7666666666666666,
+      "count": 5207,
+      "bounds": {
+        "minX": 144,
+        "maxX": 863,
+        "minY": 1240,
+        "maxY": 1267
+      },
+      "lines": 1
+    },
+    {
+      "cue": 3,
+      "text": "NOT BUFFON.",
+      "frame": 130,
+      "time": 4.333333333333333,
+      "count": 2031,
+      "bounds": {
+        "minX": 370,
+        "maxX": 649,
+        "minY": 1240,
+        "maxY": 1267
+      },
+      "lines": 1
+    },
+    {
+      "cue": 4,
+      "text": "NOT NEUER.",
+      "frame": 168,
+      "time": 5.6,
+      "count": 2026,
+      "bounds": {
+        "minX": 384,
+        "maxX": 635,
+        "minY": 1240,
+        "maxY": 1267
+      },
+      "lines": 1
+    },
+    {
+      "cue": 5,
+      "text": "NOT CASILLAS.",
+      "frame": 210,
+      "time": 7,
+      "count": 2079,
+      "bounds": {
+        "minX": 352,
+        "maxX": 667,
+        "minY": 1240,
+        "maxY": 1267
+      },
+      "lines": 1
+    },
+    {
+      "cue": 6,
+      "text": "HIS NAME WAS LEV YASHIN.",
+      "frame": 272,
+      "time": 9.066666666666666,
+      "count": 4384,
+      "bounds": {
+        "minX": 222,
+        "maxX": 797,
+        "minY": 1240,
+        "maxY": 1267
+      },
+      "lines": 1
+    },
+    {
+      "cue": 7,
+      "text": "IN 1963, HE ACHIEVED",
+      "frame": 345,
+      "time": 11.5,
+      "count": 3209,
+      "bounds": {
+        "minX": 286,
+        "maxX": 735,
+        "minY": 1240,
+        "maxY": 1268
+      },
+      "lines": 1
+    },
+    {
+      "cue": 8,
+      "text": "SOMETHING NO OTHER GOALKEEPER\nHAS EVER MATCHED.",
+      "frame": 418,
+      "time": 13.933333333333334,
+      "count": 9266,
+      "bounds": {
+        "minX": 116,
+        "maxX": 903,
+        "minY": 1240,
+        "maxY": 1315
+      },
+      "lines": 2
+    },
+    {
+      "cue": 9,
+      "text": "THEY CALLED HIM THE BLACK SPIDER.",
+      "frame": 514,
+      "time": 17.133333333333333,
+      "count": 6027,
+      "bounds": {
+        "minX": 186,
+        "maxX": 815,
+        "minY": 1240,
+        "maxY": 1315
+      },
+      "lines": 2
+    },
+    {
+      "cue": 10,
+      "text": "WITH LIGHTNING-FAST REFLEXES\nAND FEARLESS CONTROL",
+      "frame": 603,
+      "time": 20.1,
+      "count": 8986,
+      "bounds": {
+        "minX": 160,
+        "maxX": 859,
+        "minY": 1240,
+        "maxY": 1315
+      },
+      "lines": 2
+    },
+    {
+      "cue": 11,
+      "text": "OF HIS PENALTY AREA,",
+      "frame": 665,
+      "time": 22.166666666666668,
+      "count": 3176,
+      "bounds": {
+        "minX": 270,
+        "maxX": 747,
+        "minY": 1240,
+        "maxY": 1268
+      },
+      "lines": 1
+    },
+    {
+      "cue": 12,
+      "text": "YASHIN CHANGED THE WAY\nGOALKEEPERS PLAYED.",
+      "frame": 716,
+      "time": 23.866666666666667,
+      "count": 7855,
+      "bounds": {
+        "minX": 224,
+        "maxX": 795,
+        "minY": 1240,
+        "maxY": 1315
+      },
+      "lines": 2
+    },
+    {
+      "cue": 13,
+      "text": "MORE THAN SIXTY YEARS LATER,\nHIS RECORD STILL STANDS.",
+      "frame": 814,
+      "time": 27.133333333333333,
+      "count": 8489,
+      "bounds": {
+        "minX": 162,
+        "maxX": 857,
+        "minY": 1240,
+        "maxY": 1315
+      },
+      "lines": 2
+    },
+    {
+      "cue": 14,
+      "text": "WHO'S NEXT?",
+      "frame": 894,
+      "time": 29.8,
+      "count": 1956,
+      "bounds": {
+        "minX": 366,
+        "maxX": 651,
+        "minY": 1240,
+        "maxY": 1267
+      },
+      "lines": 1
+    }
+  ],
+  "gaps": [
+    {
+      "frame": 149,
+      "time": 4.966666666666667,
+      "count": 0,
+      "bounds": {
+        "minX": 1080,
+        "maxX": 0,
+        "minY": 1920,
+        "maxY": 0
+      },
+      "lines": 0
+    },
+    {
+      "frame": 187,
+      "time": 6.233333333333333,
+      "count": 0,
+      "bounds": {
+        "minX": 1080,
+        "maxX": 0,
+        "minY": 1920,
+        "maxY": 0
+      },
+      "lines": 0
+    },
+    {
+      "frame": 232,
+      "time": 7.733333333333333,
+      "count": 0,
+      "bounds": {
+        "minX": 1080,
+        "maxX": 0,
+        "minY": 1920,
+        "maxY": 0
+      },
+      "lines": 0
+    },
+    {
+      "frame": 313,
+      "time": 10.433333333333334,
+      "count": 0,
+      "bounds": {
+        "minX": 1080,
+        "maxX": 0,
+        "minY": 1920,
+        "maxY": 0
+      },
+      "lines": 0
+    },
+    {
+      "frame": 474,
+      "time": 15.8,
+      "count": 0,
+      "bounds": {
+        "minX": 1080,
+        "maxX": 0,
+        "minY": 1920,
+        "maxY": 0
+      },
+      "lines": 0
+    },
+    {
+      "frame": 552,
+      "time": 18.4,
+      "count": 0,
+      "bounds": {
+        "minX": 1080,
+        "maxX": 0,
+        "minY": 1920,
+        "maxY": 0
+      },
+      "lines": 0
+    },
+    {
+      "frame": 756,
+      "time": 25.2,
+      "count": 0,
+      "bounds": {
+        "minX": 1080,
+        "maxX": 0,
+        "minY": 1920,
+        "maxY": 0
+      },
+      "lines": 0
+    },
+    {
+      "frame": 873,
+      "time": 29.1,
+      "count": 0,
+      "bounds": {
+        "minX": 1080,
+        "maxX": 0,
+        "minY": 1920,
+        "maxY": 0
+      },
+      "lines": 0
+    }
+  ],
+  "onsetChecks": [
+    {
+      "cue": 3,
+      "start": 3.91,
+      "detectedOnset": 3.913696,
+      "deltaMs": -3.6959999999996995
+    },
+    {
+      "cue": 4,
+      "start": 5.22,
+      "detectedOnset": 5.22424,
+      "deltaMs": -4.240000000000244
+    },
+    {
+      "cue": 5,
+      "start": 6.5,
+      "detectedOnset": 6.500567,
+      "deltaMs": -0.5670000000002062
+    },
+    {
+      "cue": 6,
+      "start": 7.94,
+      "detectedOnset": 7.942766,
+      "deltaMs": -2.76599999999938
+    },
+    {
+      "cue": 7,
+      "start": 10.69,
+      "detectedOnset": 10.689433,
+      "deltaMs": 0.5670000000002062
+    },
+    {
+      "cue": 9,
+      "start": 16.04,
+      "detectedOnset": 16.039728,
+      "deltaMs": 0.27199999999893976
+    },
+    {
+      "cue": 10,
+      "start": 18.58,
+      "detectedOnset": 18.581315,
+      "deltaMs": -1.3150000000017315
+    },
+    {
+      "cue": 13,
+      "start": 25.43,
+      "detectedOnset": 25.438299,
+      "deltaMs": -8.299000000000945
+    },
+    {
+      "cue": 14,
+      "start": 29.32,
+      "detectedOnset": 29.311043,
+      "deltaMs": 8.956999999998772
+    }
+  ],
+  "timingMethod": "Supplied exact SRT retained; phrase onsets compared with original VO silence boundaries at -35 dB / 150ms. Not automatic word-level transcription.",
+  "lastCaptionEnd": 30.27
+}

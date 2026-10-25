@@ -34,7 +34,14 @@ export function Film({ project: p }: { project: ProjectData }) {
             durationInFrames={
               Math.round((cursor + s.duration) * fps) -
               from +
-              (i < p.scenes.length - 1 ? 8 : 0)
+              (i < p.scenes.length - 1
+                ? p.scenes[i + 1].transitionDuration === undefined
+                  ? 8
+                  : Math.min(
+                      Math.ceil(p.scenes[i + 1].transitionDuration! * fps),
+                      Math.round(p.scenes[i + 1].duration * fps) - 1,
+                    )
+                : 0)
             }
           >
             <Shot scene={s} index={i} />
@@ -84,7 +91,7 @@ export function Film({ project: p }: { project: ProjectData }) {
             left: 90,
             right: 150,
             textAlign: "center",
-            fontSize: 42,
+            fontSize: p.captionFontSize ?? 42,
             whiteSpace: "pre-line",
             fontWeight: 900,
             lineHeight: 1.18,
@@ -138,15 +145,34 @@ function Shot({
       : s.motion === "punch"
         ? 1 + s.strength * Math.min(t * 4, 1)
         : 1 + s.strength * t;
-  const x = s.motion === "pan" ? (t - 0.5) * 70 : 0;
-  const opacity = index && s.transition === "fade" ? Math.min(1, f / 7) : 1;
+  const x =
+    s.motion === "pan"
+      ? (t - 0.5) *
+        70 *
+        (s.strength / 0.12) *
+        (s.panDirection === "left" ? -1 : 1)
+      : 0;
+  const transitionFrames =
+    s.transitionDuration === undefined
+      ? undefined
+      : Math.max(
+          1,
+          Math.min(
+            Math.round(s.duration * fps) - 1,
+            Math.round(s.transitionDuration * fps),
+          ),
+        );
+  const opacity =
+    index && s.transition === "fade" && s.transitionDuration !== 0
+      ? Math.min(1, f / (transitionFrames ?? 7))
+      : 1;
   return (
     <AbsoluteFill
       style={{
         opacity,
         transform:
-          s.transition === "slide" && index
-            ? `translateX(${Math.max(0, 1 - f / 8) * 100}%)`
+          s.transition === "slide" && index && s.transitionDuration !== 0
+            ? `translateX(${Math.max(0, 1 - f / (transitionFrames ?? 8)) * 100}%)`
             : undefined,
       }}
     >
@@ -157,7 +183,7 @@ function Shot({
           height: "100%",
           objectFit: "cover",
           objectPosition: `${s.focalX * 100}% ${s.focalY * 100}%`,
-          transform: `scale(${s.motion === "pan" ? 1.15 : scale}) translateX(${x}px)`,
+          transform: `scale(${s.motion === "pan" ? 1 + s.strength * 1.25 : scale}) translateX(${x}px)`,
           transformOrigin: `${s.focalX * 100}% ${s.focalY * 100}%`,
         }}
       />

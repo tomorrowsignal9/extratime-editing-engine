@@ -1,0 +1,13 @@
+{
+  "projectId": "0ad7fd86-1c6c-44dd-b941-6241bf3a3474",
+  "cancelledJobId": "17875e72-b109-41f2-82f5-403da0a7fa67",
+  "checks": [
+    "unsaved draft survives refresh",
+    "native drag and drop",
+    "PNG replacement",
+    "WebP replacement",
+    "WAV voiceover replacement preserving timing",
+    "caption editing persists",
+    "cancel releases renderer"
+  ]
+}

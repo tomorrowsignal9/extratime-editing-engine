@@ -5,3 +5,6 @@ data/
 outputs/
 *.tsbuildinfo
 .venv/
+
+playwright-report/
+test-results/
