@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "render": "tsx scripts/render.ts",
-    "test": "tsx --test tests/*.test.ts",
+    "test": "tsx --test tests/*.test.ts && python3 -m unittest discover -s tests -p '*_test.py'",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "captions": "tsx scripts/apply-captions.ts",
@@ -14,7 +14,9 @@
     "dev": "next dev --hostname 127.0.0.1",
     "build": "next build",
     "start": "next start --hostname 127.0.0.1",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "qc": "tsx scripts/qc.tsx",
+    "speech:status": "python3 scripts/speech.py --status"
   },
   "dependencies": {
     "@remotion/bundler": "4.0.538",

@@ -1,0 +1,47 @@
+{
+  "video": "/workspace/extratime-editing-engine/data/studio/jobs/c093f414-fc81-4751-8d00-f8ae48d97db6/output.mp4",
+  "duration": "30.315000",
+  "dimensions": [
+    1080,
+    1920
+  ],
+  "fps": "30/1",
+  "codecs": [
+    "h264",
+    "aac"
+  ],
+  "frames": [
+    {
+      "time": 0.5,
+      "mean": 60.707175925925924,
+      "variance": 2986.667533382622
+    },
+    {
+      "time": 5,
+      "mean": 64.06196952160494,
+      "variance": 2879.709170966623
+    },
+    {
+      "time": 10,
+      "mean": 68.11381172839506,
+      "variance": 2582.5969041434973
+    },
+    {
+      "time": 20,
+      "mean": 72.52744020061728,
+      "variance": 1816.1147948748746
+    },
+    {
+      "time": 30.05,
+      "mean": 66.74450231481481,
+      "variance": 3023.5086021056995
+    }
+  ],
+  "audioCorrelation": 0.9999711277832771,
+  "tailRms": {
+    "source": 0.004706185924412415,
+    "output": 0.004225478663528045
+  },
+  "captions": 21,
+  "captionStatus": "Requires human text/timing review"
+}

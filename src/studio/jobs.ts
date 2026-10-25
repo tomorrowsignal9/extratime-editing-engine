@@ -11,6 +11,7 @@ import { randomUUID } from "node:crypto";
 import { spawn } from "node:child_process";
 import { root, id, atomic, readProject, HttpError, locked } from "./storage";
 import { Project } from "../engine/schema";
+import { assignCompute, claimCompute, releaseCompute } from "./compute";
 import type { Job } from "./types";
 export const jobDir = (key: string) => path.join(root, "jobs", id(key));
 export const renderLock = path.join(root, "render.lock");
@@ -94,21 +95,27 @@ export async function startJob(
       progress: 0,
       createdAt: new Date().toISOString(),
     };
-    await mkdir(jobDir(j.id), { recursive: true });
-    await atomic(path.join(jobDir(j.id), "job.json"), j);
-    await atomic(path.join(jobDir(j.id), "manifest.json"), manifest);
+    claimCompute({ id: j.id, kind: "render", pid: process.pid });
     let handle;
     try {
+      await mkdir(jobDir(j.id), { recursive: true });
+      await atomic(path.join(jobDir(j.id), "job.json"), j);
+      await atomic(path.join(jobDir(j.id), "manifest.json"), manifest);
       handle = await open(renderLock, "wx");
       await handle.writeFile(JSON.stringify({ id: j.id }));
       await handle.close();
-    } catch {
+    } catch (e) {
+      await handle?.close().catch(() => {});
+      releaseCompute(j.id);
+      if (handle) await unlink(renderLock).catch(() => {});
       await atomic(path.join(jobDir(j.id), "job.json"), {
         ...j,
         status: "failed",
-        error: "Another render acquired the worker.",
-      });
-      throw new HttpError(409, "Another render is already active.");
+        error: String(e),
+      }).catch(() => {});
+      if ((e as NodeJS.ErrnoException).code === "EEXIST")
+        throw new HttpError(409, "Another render is already active.");
+      throw e;
     }
     try {
       const child = spawn(
@@ -125,9 +132,11 @@ export async function startJob(
         child.once("spawn", resolve);
         child.once("error", reject);
       });
+      assignCompute(j.id, child.pid!);
       child.unref();
       return j;
     } catch (e) {
+      releaseCompute(j.id);
       await unlink(renderLock);
       await atomic(path.join(jobDir(j.id), "job.json"), {
         ...j,

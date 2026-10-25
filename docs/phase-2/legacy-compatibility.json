@@ -1,0 +1,21 @@
+{
+  "reference": "outputs/episode-001-subtitled.mp4",
+  "results": [
+    {
+      "frame": 15,
+      "meanAbsolutePixelError": 3.0647021283436215
+    },
+    {
+      "frame": 111,
+      "meanAbsolutePixelError": 2.450553305041152
+    },
+    {
+      "frame": 420,
+      "meanAbsolutePixelError": 3.144994855967078
+    },
+    {
+      "frame": 908,
+      "meanAbsolutePixelError": 2.556925797325103
+    }
+  ]
+}

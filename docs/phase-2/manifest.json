@@ -1,0 +1,560 @@
+{
+  "id": "b0eb2776-22e1-4279-8ec2-7428696749e1",
+  "title": "Phase 2 alignment 1792957553054",
+  "narrationScript": "ONLY ONE GOALKEEPER HAS EVER WON THE BALLON D'OR. NOT BUFFON. NOT NEUER. NOT CASILLAS. HIS NAME WAS LEV YASHIN. IN 1963, HE ACHIEVED SOMETHING NO OTHER GOALKEEPER HAS EVER MATCHED. THEY CALLED HIM THE BLACK SPIDER. WITH LIGHTNING-FAST REFLEXES AND FEARLESS CONTROL OF HIS PENALTY AREA, YASHIN CHANGED THE WAY GOALKEEPERS PLAYED. MORE THAN SIXTY YEARS LATER, HIS RECORD STILL STANDS. WHO'S NEXT?\n",
+  "duration": 30.3,
+  "audio": "media/studio-b0eb2776-22e1-4279-8ec2-7428696749e1/db9922d9-3cd4-49a8-8a26-244cc2df70c9.mp3",
+  "preset": "Legendary Stories",
+  "captionStyle": "kinetic",
+  "captionTiming": {
+    "method": "pocketsphinx-forced-alignment",
+    "reliable": true,
+    "reviewed": true
+  },
+  "soundLayers": [
+    {
+      "id": "616d9874-3215-4132-b1c9-f7114101aac8",
+      "asset": "media/studio-b0eb2776-22e1-4279-8ec2-7428696749e1/b202d7f5-6719-457c-88f3-fdc0ee8a30a6.wav",
+      "category": "whoosh",
+      "start": 8,
+      "duration": 3,
+      "volume": 0.1,
+      "enabled": true,
+      "loop": true,
+      "license": "CC0",
+      "attribution": "Original deterministic synthetic whoosh; scripts/make-sound-fixture.py (CC0)",
+      "sourceDuration": 0.8,
+      "sourcePeak": 0.1347140073776245,
+      "narrationRms": 0.09048990267654894
+    }
+  ],
+  "captionY": 64,
+  "captionColor": "#C4EC77",
+  "approved": true,
+  "captions": [
+    {
+      "text": "ONLY ONE GOALKEEPER HAS",
+      "words": [
+        {
+          "text": "ONLY",
+          "start": 0.09,
+          "end": 0.36
+        },
+        {
+          "text": "ONE",
+          "start": 0.37,
+          "end": 0.83
+        },
+        {
+          "text": "GOALKEEPER",
+          "start": 0.83,
+          "end": 1.47
+        },
+        {
+          "text": "HAS",
+          "start": 1.47,
+          "end": 1.75
+        }
+      ],
+      "start": 0.09,
+      "end": 1.75
+    },
+    {
+      "text": "EVER WON THE BALLON",
+      "words": [
+        {
+          "text": "EVER",
+          "start": 1.75,
+          "end": 2.21
+        },
+        {
+          "text": "WON",
+          "start": 2.21,
+          "end": 2.44
+        },
+        {
+          "text": "THE",
+          "start": 2.44,
+          "end": 2.51
+        },
+        {
+          "text": "BALLON",
+          "start": 2.51,
+          "end": 2.88
+        }
+      ],
+      "start": 1.75,
+      "end": 2.88
+    },
+    {
+      "text": "D'OR.",
+      "words": [
+        {
+          "text": "D'OR.",
+          "start": 2.88,
+          "end": 3.16
+        }
+      ],
+      "start": 2.88,
+      "end": 3.16
+    },
+    {
+      "text": "NOT BUFFON.",
+      "words": [
+        {
+          "text": "NOT",
+          "start": 3.91,
+          "end": 4.15
+        },
+        {
+          "text": "BUFFON.",
+          "start": 4.15,
+          "end": 4.72
+        }
+      ],
+      "start": 3.91,
+      "end": 4.72
+    },
+    {
+      "text": "NOT NEUER.",
+      "words": [
+        {
+          "text": "NOT",
+          "start": 5.22,
+          "end": 5.44
+        },
+        {
+          "text": "NEUER.",
+          "start": 5.44,
+          "end": 5.9
+        }
+      ],
+      "start": 5.22,
+      "end": 5.9
+    },
+    {
+      "text": "NOT CASILLAS.",
+      "words": [
+        {
+          "text": "NOT",
+          "start": 6.5,
+          "end": 6.68
+        },
+        {
+          "text": "CASILLAS.",
+          "start": 6.68,
+          "end": 7.52
+        }
+      ],
+      "start": 6.5,
+      "end": 7.52
+    },
+    {
+      "text": "HIS NAME WAS LEV",
+      "words": [
+        {
+          "text": "HIS",
+          "start": 8.07,
+          "end": 8.27
+        },
+        {
+          "text": "NAME",
+          "start": 8.27,
+          "end": 8.73
+        },
+        {
+          "text": "WAS",
+          "start": 8.73,
+          "end": 9.1
+        },
+        {
+          "text": "LEV",
+          "start": 9.1,
+          "end": 9.53
+        }
+      ],
+      "start": 8.07,
+      "end": 9.53
+    },
+    {
+      "text": "YASHIN.",
+      "words": [
+        {
+          "text": "YASHIN.",
+          "start": 9.53,
+          "end": 10.26
+        }
+      ],
+      "start": 9.53,
+      "end": 10.26
+    },
+    {
+      "text": "IN 1963, HE ACHIEVED",
+      "words": [
+        {
+          "text": "IN",
+          "start": 10.71,
+          "end": 10.8
+        },
+        {
+          "text": "1963,",
+          "start": 10.8,
+          "end": 12.04
+        },
+        {
+          "text": "HE",
+          "start": 12.04,
+          "end": 12.36
+        },
+        {
+          "text": "ACHIEVED",
+          "start": 12.36,
+          "end": 12.71
+        }
+      ],
+      "start": 10.71,
+      "end": 12.71
+    },
+    {
+      "text": "SOMETHING NO OTHER GOALKEEPER",
+      "words": [
+        {
+          "text": "SOMETHING",
+          "start": 12.71,
+          "end": 13.21
+        },
+        {
+          "text": "NO",
+          "start": 13.21,
+          "end": 13.6
+        },
+        {
+          "text": "OTHER",
+          "start": 13.6,
+          "end": 13.81
+        },
+        {
+          "text": "GOALKEEPER",
+          "start": 13.81,
+          "end": 14.43
+        }
+      ],
+      "start": 12.71,
+      "end": 14.43
+    },
+    {
+      "text": "HAS EVER MATCHED.",
+      "words": [
+        {
+          "text": "HAS",
+          "start": 14.43,
+          "end": 14.73
+        },
+        {
+          "text": "EVER",
+          "start": 14.73,
+          "end": 15.01
+        },
+        {
+          "text": "MATCHED.",
+          "start": 15.01,
+          "end": 15.58
+        }
+      ],
+      "start": 14.43,
+      "end": 15.58
+    },
+    {
+      "text": "THEY CALLED HIM THE",
+      "words": [
+        {
+          "text": "THEY",
+          "start": 15.95,
+          "end": 16.13
+        },
+        {
+          "text": "CALLED",
+          "start": 16.13,
+          "end": 16.54
+        },
+        {
+          "text": "HIM",
+          "start": 16.54,
+          "end": 16.91
+        },
+        {
+          "text": "THE",
+          "start": 16.91,
+          "end": 17
+        }
+      ],
+      "start": 15.95,
+      "end": 17
+    },
+    {
+      "text": "BLACK SPIDER.",
+      "words": [
+        {
+          "text": "BLACK",
+          "start": 17,
+          "end": 17.49
+        },
+        {
+          "text": "SPIDER.",
+          "start": 17.49,
+          "end": 18.29
+        }
+      ],
+      "start": 17,
+      "end": 18.29
+    },
+    {
+      "text": "WITH LIGHTNING-FAST REFLEXES AND",
+      "words": [
+        {
+          "text": "WITH",
+          "start": 18.58,
+          "end": 18.71
+        },
+        {
+          "text": "LIGHTNING-FAST",
+          "start": 18.71,
+          "end": 19.57
+        },
+        {
+          "text": "REFLEXES",
+          "start": 19.57,
+          "end": 20.2
+        },
+        {
+          "text": "AND",
+          "start": 20.2,
+          "end": 20.33
+        }
+      ],
+      "start": 18.58,
+      "end": 20.33
+    },
+    {
+      "text": "FEARLESS CONTROL OF HIS",
+      "words": [
+        {
+          "text": "FEARLESS",
+          "start": 20.33,
+          "end": 20.89
+        },
+        {
+          "text": "CONTROL",
+          "start": 20.89,
+          "end": 21.33
+        },
+        {
+          "text": "OF",
+          "start": 21.33,
+          "end": 21.39
+        },
+        {
+          "text": "HIS",
+          "start": 21.39,
+          "end": 21.54
+        }
+      ],
+      "start": 20.33,
+      "end": 21.54
+    },
+    {
+      "text": "PENALTY AREA, YASHIN CHANGED",
+      "words": [
+        {
+          "text": "PENALTY",
+          "start": 21.54,
+          "end": 21.99
+        },
+        {
+          "text": "AREA,",
+          "start": 21.99,
+          "end": 22.38
+        },
+        {
+          "text": "YASHIN",
+          "start": 22.69,
+          "end": 23.17
+        },
+        {
+          "text": "CHANGED",
+          "start": 23.17,
+          "end": 23.66
+        }
+      ],
+      "start": 21.54,
+      "end": 23.66
+    },
+    {
+      "text": "THE WAY GOALKEEPERS PLAYED.",
+      "words": [
+        {
+          "text": "THE",
+          "start": 23.66,
+          "end": 23.73
+        },
+        {
+          "text": "WAY",
+          "start": 23.73,
+          "end": 23.93
+        },
+        {
+          "text": "GOALKEEPERS",
+          "start": 23.93,
+          "end": 24.54
+        },
+        {
+          "text": "PLAYED.",
+          "start": 24.54,
+          "end": 25.12
+        }
+      ],
+      "start": 23.66,
+      "end": 25.12
+    },
+    {
+      "text": "MORE THAN SIXTY YEARS",
+      "words": [
+        {
+          "text": "MORE",
+          "start": 25.42,
+          "end": 25.58
+        },
+        {
+          "text": "THAN",
+          "start": 25.58,
+          "end": 25.74
+        },
+        {
+          "text": "SIXTY",
+          "start": 25.74,
+          "end": 26.26
+        },
+        {
+          "text": "YEARS",
+          "start": 26.26,
+          "end": 26.52
+        }
+      ],
+      "start": 25.42,
+      "end": 26.52
+    },
+    {
+      "text": "LATER, HIS RECORD STILL",
+      "words": [
+        {
+          "text": "LATER,",
+          "start": 26.52,
+          "end": 27
+        },
+        {
+          "text": "HIS",
+          "start": 27.17,
+          "end": 27.35
+        },
+        {
+          "text": "RECORD",
+          "start": 27.35,
+          "end": 27.78
+        },
+        {
+          "text": "STILL",
+          "start": 27.78,
+          "end": 28.19
+        }
+      ],
+      "start": 26.52,
+      "end": 28.19
+    },
+    {
+      "text": "STANDS.",
+      "words": [
+        {
+          "text": "STANDS.",
+          "start": 28.19,
+          "end": 28.86
+        }
+      ],
+      "start": 28.19,
+      "end": 28.86
+    },
+    {
+      "text": "WHO'S NEXT?",
+      "words": [
+        {
+          "text": "WHO'S",
+          "start": 29.25,
+          "end": 29.56
+        },
+        {
+          "text": "NEXT?",
+          "start": 29.56,
+          "end": 30.11
+        }
+      ],
+      "start": 29.25,
+      "end": 30.3
+    }
+  ],
+  "scenes": [
+    {
+      "asset": "media/studio-b0eb2776-22e1-4279-8ec2-7428696749e1/7ef89602-a796-483b-9ae1-360b4b418a17.jpeg",
+      "duration": 6.5,
+      "panDirection": "right",
+      "transitionDuration": 0.267,
+      "motion": "punch",
+      "focalX": 0.5,
+      "focalY": 0.5,
+      "strength": 0.13,
+      "transition": "fade"
+    },
+    {
+      "asset": "media/studio-b0eb2776-22e1-4279-8ec2-7428696749e1/473e62d7-a929-4538-bc4d-7b872badd08d.jpeg",
+      "duration": 4.199999999999999,
+      "panDirection": "left",
+      "transitionDuration": 0.267,
+      "motion": "pan",
+      "focalX": 0.5,
+      "focalY": 0.5,
+      "strength": 0.08,
+      "transition": "fade"
+    },
+    {
+      "asset": "media/studio-b0eb2776-22e1-4279-8ec2-7428696749e1/cd0603f5-0a10-4509-a259-86533ace388a.jpeg",
+      "duration": 7.866666666666667,
+      "panDirection": "right",
+      "transitionDuration": 0.267,
+      "motion": "pull",
+      "focalX": 0.5,
+      "focalY": 0.5,
+      "strength": 0.08,
+      "transition": "fade"
+    },
+    {
+      "asset": "media/studio-b0eb2776-22e1-4279-8ec2-7428696749e1/2f59546f-5b00-4db9-abdf-3a0adbfa7be2.jpeg",
+      "duration": 6.866666666666667,
+      "panDirection": "left",
+      "transitionDuration": 0.267,
+      "motion": "punch",
+      "focalX": 0.5,
+      "focalY": 0.5,
+      "strength": 0.13,
+      "transition": "fade"
+    },
+    {
+      "asset": "media/studio-b0eb2776-22e1-4279-8ec2-7428696749e1/f2c89eab-97ed-4b28-9ac8-26224380b190.jpeg",
+      "duration": 4.866666666666667,
+      "panDirection": "right",
+      "transitionDuration": 0.267,
+      "motion": "push",
+      "focalX": 0.5,
+      "focalY": 0.5,
+      "strength": 0.08,
+      "transition": "fade"
+    }
+  ]
+}

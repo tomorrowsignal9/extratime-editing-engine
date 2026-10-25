@@ -1,10 +1,10 @@
 # EXTRATIME STUDIO
 
-A local-first football Shorts editor built with Next.js, TypeScript, Tailwind and Remotion. Phase 1 adds a working browser dashboard to the validated Phase 0 renderer. Images, voiceovers, project metadata and exported videos stay on your machine. No database, cloud account, paid AI API or Whisper model is required.
+A local-first football Shorts editor built with Next.js, TypeScript, Tailwind and Remotion. The Phase 1 dashboard extends the validated Phase 0 renderer; Phase 2 adds local speech assistance, reviewable editing suggestions, sound layers and QC. See the Phase 2 status report for measured acceptance and remaining verification limits. Images, voiceovers, project metadata and exported videos stay on your machine. No database, cloud account, paid AI API or Whisper model is required.
 
 ## Run locally
 
-Install Node.js 22+, npm, FFmpeg/ffprobe and a Chromium-based browser. On macOS, `brew install ffmpeg` provides the media tools; an existing Google Chrome installation can serve as the render browser.
+Install Node.js 22+, npm, Python 3.10+, FFmpeg/ffprobe and a Chromium-based browser. On macOS, `brew install ffmpeg` provides the media tools; an existing Google Chrome installation can serve as the render browser.
 
 ```sh
 npm ci
@@ -57,7 +57,7 @@ The renderer uses one frame-rendering worker and H.264 `veryfast` encoding. M4 t
 The supplied media is local and gitignored. After a fresh clone, copy the original Episode 001 images and `VO.mp3` into `public/media/episode-001/`. The dashboard then offers **Import Episode 001**, which makes an isolated project copy while preserving the baseline timing. Alternatively upload your own assets through Create Project; no code edits are needed.
 
 ```sh
-npm test                 # 18 unit/storage tests; no Episode 001 binary assets required
+npm test                 # TypeScript + Python tests; no Episode 001 binaries/models required
 npm run lint
 npm run typecheck
 npm run build
@@ -70,7 +70,7 @@ STUDIO_URL=http://127.0.0.1:3001 CHROME_PATH=/path/to/chromium npm run test:e2e
 
 Browser acceptance tests use actual uploads and the real renderer, exercise refresh/draft recovery, two-tab conflicts, invalid uploads, replacements, drag/drop, cancellation, renderer failure/retry, concurrency rejection, MP4 download and preview/export pixel comparison. They take several minutes and create local test projects/jobs. They deliberately remove and restore **one isolated test project's** media file to exercise render failure. They do not modify the original Episode 001 files.
 
-Evidence is documented in [Phase 1 status](docs/PHASE-1-STATUS.md). The Phase 0 CLI workflow below remains supported. Whisper and other automatic editing/transcription assistance are deferred to Phase 2; batch production is outside this release.
+Evidence is documented in [Phase 1 status](docs/PHASE-1-STATUS.md) and [Phase 2 status](docs/PHASE-2-STATUS.md). The Phase 0 CLI workflow remains supported. Batch production is outside this release.
 
 ---
 
@@ -82,20 +82,67 @@ npm run import:project -- episode-002 "Your title" /path/VO.mp3 /path/scene-01.j
 
 This detects voiceover duration with ffprobe, rounds up to a 30fps frame boundary, normalizes images with Sharp, and writes `data/projects/episode-002.json`. Asset references are relative to `public/`. Existing project IDs are rejected. An optional `SRT_FILE=/path/captions.srt` imports captions. Image order is argument order. No audio speed change or truncation is applied.
 
-## Optional local speech-to-text — deferred to Phase 2
+## Phase 2: local speech setup and smart editing
 
-This optional integration is not required for Phase 0 and has not been end-to-end validated. The standard setup installs no Whisper packages or models. Use the supplied SRT for Episode 001.
+All speech processing is optional. Missing dependencies/weights produce an actionable error and leave the saved timeline/captions unchanged. Manual SRT import and editing remain available. Rendering never downloads speech weights. The dashboard reports only locally available models; it never accepts arbitrary browser-supplied model paths.
+
+**Explicit optional setup:** PocketSphinx includes a small English acoustic model in its package (about 30 MB, rather than a large Whisper model). This command installs it; do not run it unless you want that setup/download:
 
 ```sh
-python3 -m venv .venv
-.venv/bin/pip install -r requirements-stt.txt
-.venv/bin/python scripts/transcribe.py public/media/episode-002/voiceover.mp3 data/transcript.json
-npm run captions -- data/projects/episode-002.json data/transcript.json
+bash scripts/setup-alignment.sh
+.venv/bin/python scripts/speech.py --status
 ```
 
-The first run downloads the public `base.en` Whisper model (~150 MB) from Hugging Face; subsequent runs use `data/models` locally. `WHISPER_MODEL` accepts a local model path or supported model ID. CPU int8 inference uses two threads. Raw word timestamps are retained in the transcript JSON; display captions group five recognized words. These are model estimates requiring human review, not forced-aligned ground truth. Set `WHISPER_MODEL` to an already-downloaded model directory to operate offline.
+For fully offline setup, install the pinned wheels from your own wheel directory (`.venv/bin/pip install --no-index --find-links /local/wheels -r requirements-alignment.txt`). An optional custom PocketSphinx English model folder contains `acoustic/` (mdef, means, variances, transition_matrices, sendump, feat.params) and `lexicon.dict`:
 
-Alternative: `npm run captions -- data/projects/episode-002.json /path/captions.srt`. Manually edit text, start/end seconds, scene durations, focal coordinates, and motion in project JSON. Changes must preserve narration duration. Overlapping/out-of-bounds captions and invalid scene durations fail validation.
+```sh
+.venv/bin/python scripts/import-speech-model.py pocketsphinx /local/model-folder football-en
+```
+
+Offline Whisper uses a **CTranslate2 faster-whisper model directory**, not a whisper.cpp GGUF file or a remote model name. Install the pinned runtime explicitly, then import weights you already have:
+
+```sh
+.venv/bin/pip install -r requirements-stt.txt
+.venv/bin/python scripts/import-speech-model.py whisper /local/whisper-ct2-folder base-en
+.venv/bin/python scripts/speech.py --status
+```
+
+The Whisper folder must contain `model.bin`, `config.json`, and `tokenizer.json`, plus the model's other configuration files. Import copies local files into `data/models/<kind>/<name>` and records checksums; it rejects symlinks and existing names. Dependencies can also be installed from offline wheels. `EXTRATIME_MODELS` overrides the operator-controlled model root; `EXTRATIME_PYTHON` selects a Python interpreter (default `.venv/bin/python`). Whisper is CPU int8 with two threads. No model is bundled in Git. If a source build is needed, install your platform’s C compiler. This cloud environment required `CC=gcc CXX=g++ bash scripts/setup-alignment.sh` because its inherited `CC=clang` pointed to a missing compiler; source builds default to two parallel jobs.
+
+In the dashboard:
+
+1. In **Smart editing**, paste/import the exact English narration script, then save. Script text persists with the project and browser draft. Generate a caption suggestion with the installed local aligner. Without a script, select offline Whisper when its imported weights are available. Suggestions do not replace saved captions until **Apply caption suggestion** is clicked; revisions reject stale results from another tab.
+2. PocketSphinx constrains decoding to the exact script, then performs acoustic state alignment. It derives times from the audio, not from SRT timestamps or evenly divided words. Display punctuation and numeric text are retained; spoken English numbers are expanded for alignment. Write numbers in their spoken form if the narration uses an alternate pronunciation. Unknown names require explicit phonemes in `config/football-pronunciations.json`, or use SRT. This is an English dictionary-based aligner; incorrect scripts, accents, noise and unknown names can reduce accuracy. Its structural checks are **not calibrated accuracy scores**. Listen and review every result.
+3. Choose documentary box, minimal text, spoken-word underline or kinetic emphasis. Word effects require real word times plus timing review. When timing is unreviewed/flagged, captions remain readable phrases. Edit individual words/times under **Edit every word and timestamp**; editing resets review. Editing a whole phrase clears its word times to avoid highlighting stale text.
+4. **Suggest scene timing & motion** uses sentence boundaries, pauses and narration keywords, then shows before/after values. Accept explicitly to update the timeline. These are deterministic heuristics, not image recognition. Image order and the complete voiceover are preserved. Camera settings remain manually editable.
+5. Import locally owned/licensed WAV/MP3 effects or music with category, license and attribution. CC BY requires attribution. Whoosh, impact, riser, stadium and music layers use the same audio component in preview/export; no commercial sound library is bundled. Add/enable each layer explicitly, set timing, loop and level. Disabling a layer removes it from playback/export. Gains are capped by measured source peak and narration RMS, divided across active layers, ducked 80% during captioned narration with attack/release fades, and conservatively ducked throughout if there are no captions. Enabled sounds reserve headroom by playing narration at 90% gain; narration duration/speed never changes.
+6. Export runs caption geometry QC before rendering and full media QC after the existing renderer/validation. **QC report** returns machine-readable JSON: invalid/overlapping times, mobile-safe text bounds using the actual caption component, full narration coverage, expected streams, whole-video black-frame scan and clipping. Caption text must fit within x=75–945, y=480–1600 in the 1080×1920 frame, at most two lines. Adjust font/position or split long cues when QC fails. These checks catch obvious defects, not factual errors, editorial quality or every kind of artifact.
+
+Speech and dashboard rendering share a single compute lock. Preview remains the same Remotion `Film` composition, with no transcription while idle. Speech is synchronous local analysis with a four-minute timeout; failed analysis releases the lock and does not overwrite the project. CLI commands remain operator-controlled: do not run them concurrently with the dashboard worker.
+
+For Episode 001, `episodes/episode-001/narration.txt` is **only the concatenated text of the supplied exact English SRT**, not a separately supplied script. Alignment receives that text and the original MP3; existing SRT timestamps are not alignment inputs.
+
+```sh
+mkdir -p outputs/phase-2
+.venv/bin/python scripts/speech.py --mode align \
+  --audio public/media/episode-001/VO.mp3 \
+  --script episodes/episode-001/narration.txt --model bundled-en-us \
+  --output outputs/phase-2/alignment.json
+npm run captions -- data/projects/episode-001.json outputs/phase-2/alignment.json
+# Or preserve manual SRT:
+npm run captions -- data/projects/episode-001.json episodes/episode-001/subtitles.srt
+
+# Real acceptance must require a model; without it the alignment browser case is skipped:
+REQUIRE_ALIGNMENT=1 STUDIO_URL=http://127.0.0.1:3001 npm run test:e2e
+# Run all browser cases in ONE invocation; they share local worker/artifact storage.
+npm run qc -- data/projects/episode-001.json outputs/episode-001-subtitled.mp4
+# Episode 001 independent timing anchors and actual encoded word highlights:
+npx tsx scripts/validate-alignment.ts outputs/phase-2/alignment.json
+npx tsx scripts/validate-kinetic.ts outputs/phase-2/aligned/manifest.json outputs/phase-2/aligned/episode-001.mp4
+python3 scripts/verify-sound-fixture.py outputs/phase-2/aligned
+```
+
+`scripts/make-sound-fixture.py` generates an original deterministic synthetic whoosh for tests, dedicated to CC0. It is not a stadium recording. The sound license entered by the user is retained in project/job manifests; the app cannot independently establish the rights to uploaded content.
 
 ## Render and verify
 
@@ -104,7 +151,7 @@ CHROME_PATH=/path/to/chromium npm run render -- data/projects/episode-002.json -
 npm run validate -- data/projects/episode-002.json outputs/episode-002.mp4
 ```
 
-Proof renders allow unapproved manifests for editorial review. Before final rendering, review rights, factual accuracy, synthetic reenactment disclosure, all captions/timestamps, crop focus, and full narration including final words; then set `approved: true` and omit `--proof`. Approval is manual in this prototype, not a dashboard checklist. Files are written under `outputs`: MP4, SRT, project JSON, and validation report. Render logs report real frame/encoding progress. Existing same-ID exports are overwritten; keep prior versions elsewhere before rerendering.
+Proof renders allow unapproved manifests for editorial review. Before final rendering, review rights, factual accuracy, synthetic reenactment disclosure, all captions/timestamps, crop focus, and full narration including final words; then set `approved: true` and omit `--proof`. For CLI use, approval is an explicit manifest flag; dashboard export has its own review checkbox. Files are written under `outputs`: MP4, SRT, project JSON, and validation report. Render logs report real frame/encoding progress. Existing same-ID exports are overwritten; keep prior versions elsewhere before rerendering.
 
 The sample supplied in this session is at `public/media/episode-001/`, with `data/projects/episode-001.json`. Source assets and generated files are gitignored. `docs/episode-001.manifest.json` retains the captioned configuration; copy it into `data/projects` only when initializing a new checkout with the supplied assets. Output length is 30.3 seconds to retain the full 30.276-second recording.
 

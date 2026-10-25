@@ -1,0 +1,13 @@
+{
+  "method": "Residual after subtracting 90% original narration, correlated with the repeated source whoosh. Control windows contain narration but no sound layer. AAC compression contributes residual noise.",
+  "soundResidualCorrelation": 0.48267675638742746,
+  "controlCorrelations": [
+    0.011085441011860367,
+    0.010421554419040052,
+    0.002272908874011972,
+    0.007650828174651363
+  ],
+  "insideResidualRms": 0.0011002780541995894,
+  "outsideResidualRms": 0.0006117372513344439,
+  "passed": true
+}

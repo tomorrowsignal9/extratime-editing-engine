@@ -1,0 +1,20 @@
+
+> extratime-editing-engine@0.1.0 test:e2e
+> playwright test
+
+
+Running 5 tests using 1 worker
+
+(node:55892) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+  ✓  1 e2e/smart.spec.ts:8:3 › manual SRT fallback, reviewable suggestions, licensed sound and real MP4 QC (1.5m)
+
+  ✓  2 e2e/smart.spec.ts:8:3 › real offline Episode 001 script alignment, word preview and MP4 (1.7m)
+  ✓  3 e2e/smart.spec.ts:369:1 › script persists after refresh and stale suggestions cannot overwrite another tab (3.2s)
+
+  ✓  4 e2e/studio.spec.ts:6:1 › real browser: create, upload, edit, persist, resolve conflicts, render, download and compare preview (1.9m)
+
+  ✓  5 e2e/studio.spec.ts:311:1 › browser draft recovery, replacement formats, caption persistence, drag reorder and cancellation (6.1s)
+
+  5 passed (5.2m)

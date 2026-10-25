@@ -1,0 +1,41 @@
+
+> extratime-editing-engine@0.1.0 test
+> tsx --test tests/*.test.ts && python3 -m unittest discover -s tests -p '*_test.py'
+
+✔ all caption presets use actual words only after timing review (15.395313ms)
+✔ manifest validates and supplies safe defaults (4.580994ms)
+✔ rejects asset path traversal (1.109773ms)
+✔ rejects unsupported asset URLs (0.521075ms)
+✔ rejects negative scene timing (0.560705ms)
+✔ rejects timeline truncating narration (0.392812ms)
+✔ rejects out of bounds captions (0.37182ms)
+✔ rejects overlapping captions (0.309196ms)
+✔ SRT round trips milliseconds and multiline phrases (2.610484ms)
+✔ malformed SRT produces an error (0.317118ms)
+✔ automatic timing preserves the complete narration and clears approval (0.78923ms)
+✔ Episode 001 supplied SRT retains all 14 cues and the final narration cue (27.50135ms)
+✔ word timings reject overlap, changed text, out-of-cue and nonpositive values (4.347101ms)
+✔ smart suggestions are deterministic, non-mutating, frame-exact and preserve narration (3.689851ms)
+✔ sound ducking uses measured peak budget, protects narration and disables layers (1.328753ms)
+✔ compute lock rejects simultaneous speech/render and only owner can release (1.105286ms)
+✔ local speech fallback, suggestion revisions and licensed sound ownership persist (967.118956ms)
+✔ duration editor redistributes frames and retains full VO (2.372094ms)
+✔ all three presets change actual supported scene parameters (2.096439ms)
+✔ even allocation uses exact frames and rejects excessive clips (0.210156ms)
+✔ identifiers reject traversal and arbitrary paths (0.382537ms)
+✔ same origin checks actual request Host and rejects rebinding (22.231136ms)
+✔ stream body cap rejects missing Content-Length bypass (2.301259ms)
+✔ real storage/upload persistence, rollback, revisions, ownership and trash (262.91394ms)
+ℹ tests 24
+ℹ suites 0
+ℹ pass 24
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1557.160377
+....
+----------------------------------------------------------------------
+Ran 4 tests in 0.001s
+
+OK

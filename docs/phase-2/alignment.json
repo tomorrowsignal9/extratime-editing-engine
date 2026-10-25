@@ -1,0 +1,804 @@
+{
+  "captions": [
+    {
+      "text": "ONLY ONE GOALKEEPER HAS",
+      "start": 0.09,
+      "end": 1.75,
+      "words": [
+        {
+          "text": "ONLY",
+          "start": 0.09,
+          "end": 0.37
+        },
+        {
+          "text": "ONE",
+          "start": 0.37,
+          "end": 0.83
+        },
+        {
+          "text": "GOALKEEPER",
+          "start": 0.83,
+          "end": 1.47
+        },
+        {
+          "text": "HAS",
+          "start": 1.47,
+          "end": 1.75
+        }
+      ]
+    },
+    {
+      "text": "EVER WON THE BALLON",
+      "start": 1.75,
+      "end": 2.88,
+      "words": [
+        {
+          "text": "EVER",
+          "start": 1.75,
+          "end": 2.21
+        },
+        {
+          "text": "WON",
+          "start": 2.21,
+          "end": 2.44
+        },
+        {
+          "text": "THE",
+          "start": 2.44,
+          "end": 2.51
+        },
+        {
+          "text": "BALLON",
+          "start": 2.51,
+          "end": 2.88
+        }
+      ]
+    },
+    {
+      "text": "D'OR.",
+      "start": 2.88,
+      "end": 3.16,
+      "words": [
+        {
+          "text": "D'OR.",
+          "start": 2.88,
+          "end": 3.16
+        }
+      ]
+    },
+    {
+      "text": "NOT BUFFON.",
+      "start": 3.91,
+      "end": 4.72,
+      "words": [
+        {
+          "text": "NOT",
+          "start": 3.91,
+          "end": 4.15
+        },
+        {
+          "text": "BUFFON.",
+          "start": 4.15,
+          "end": 4.72
+        }
+      ]
+    },
+    {
+      "text": "NOT NEUER.",
+      "start": 5.22,
+      "end": 5.9,
+      "words": [
+        {
+          "text": "NOT",
+          "start": 5.22,
+          "end": 5.44
+        },
+        {
+          "text": "NEUER.",
+          "start": 5.44,
+          "end": 5.9
+        }
+      ]
+    },
+    {
+      "text": "NOT CASILLAS.",
+      "start": 6.5,
+      "end": 7.52,
+      "words": [
+        {
+          "text": "NOT",
+          "start": 6.5,
+          "end": 6.68
+        },
+        {
+          "text": "CASILLAS.",
+          "start": 6.68,
+          "end": 7.52
+        }
+      ]
+    },
+    {
+      "text": "HIS NAME WAS LEV",
+      "start": 8.07,
+      "end": 9.53,
+      "words": [
+        {
+          "text": "HIS",
+          "start": 8.07,
+          "end": 8.27
+        },
+        {
+          "text": "NAME",
+          "start": 8.27,
+          "end": 8.73
+        },
+        {
+          "text": "WAS",
+          "start": 8.73,
+          "end": 9.1
+        },
+        {
+          "text": "LEV",
+          "start": 9.1,
+          "end": 9.53
+        }
+      ]
+    },
+    {
+      "text": "YASHIN.",
+      "start": 9.53,
+      "end": 10.26,
+      "words": [
+        {
+          "text": "YASHIN.",
+          "start": 9.53,
+          "end": 10.26
+        }
+      ]
+    },
+    {
+      "text": "IN 1963, HE ACHIEVED",
+      "start": 10.71,
+      "end": 12.71,
+      "words": [
+        {
+          "text": "IN",
+          "start": 10.71,
+          "end": 10.8
+        },
+        {
+          "text": "1963,",
+          "start": 10.8,
+          "end": 12.04
+        },
+        {
+          "text": "HE",
+          "start": 12.04,
+          "end": 12.36
+        },
+        {
+          "text": "ACHIEVED",
+          "start": 12.36,
+          "end": 12.71
+        }
+      ]
+    },
+    {
+      "text": "SOMETHING NO OTHER GOALKEEPER",
+      "start": 12.71,
+      "end": 14.43,
+      "words": [
+        {
+          "text": "SOMETHING",
+          "start": 12.71,
+          "end": 13.21
+        },
+        {
+          "text": "NO",
+          "start": 13.21,
+          "end": 13.6
+        },
+        {
+          "text": "OTHER",
+          "start": 13.6,
+          "end": 13.81
+        },
+        {
+          "text": "GOALKEEPER",
+          "start": 13.81,
+          "end": 14.43
+        }
+      ]
+    },
+    {
+      "text": "HAS EVER MATCHED.",
+      "start": 14.43,
+      "end": 15.58,
+      "words": [
+        {
+          "text": "HAS",
+          "start": 14.43,
+          "end": 14.73
+        },
+        {
+          "text": "EVER",
+          "start": 14.73,
+          "end": 15.01
+        },
+        {
+          "text": "MATCHED.",
+          "start": 15.01,
+          "end": 15.58
+        }
+      ]
+    },
+    {
+      "text": "THEY CALLED HIM THE",
+      "start": 15.95,
+      "end": 17.0,
+      "words": [
+        {
+          "text": "THEY",
+          "start": 15.95,
+          "end": 16.13
+        },
+        {
+          "text": "CALLED",
+          "start": 16.13,
+          "end": 16.54
+        },
+        {
+          "text": "HIM",
+          "start": 16.54,
+          "end": 16.91
+        },
+        {
+          "text": "THE",
+          "start": 16.91,
+          "end": 17.0
+        }
+      ]
+    },
+    {
+      "text": "BLACK SPIDER.",
+      "start": 17.0,
+      "end": 18.29,
+      "words": [
+        {
+          "text": "BLACK",
+          "start": 17.0,
+          "end": 17.49
+        },
+        {
+          "text": "SPIDER.",
+          "start": 17.49,
+          "end": 18.29
+        }
+      ]
+    },
+    {
+      "text": "WITH LIGHTNING-FAST REFLEXES AND",
+      "start": 18.58,
+      "end": 20.33,
+      "words": [
+        {
+          "text": "WITH",
+          "start": 18.58,
+          "end": 18.71
+        },
+        {
+          "text": "LIGHTNING-FAST",
+          "start": 18.71,
+          "end": 19.57
+        },
+        {
+          "text": "REFLEXES",
+          "start": 19.57,
+          "end": 20.2
+        },
+        {
+          "text": "AND",
+          "start": 20.2,
+          "end": 20.33
+        }
+      ]
+    },
+    {
+      "text": "FEARLESS CONTROL OF HIS",
+      "start": 20.33,
+      "end": 21.54,
+      "words": [
+        {
+          "text": "FEARLESS",
+          "start": 20.33,
+          "end": 20.89
+        },
+        {
+          "text": "CONTROL",
+          "start": 20.89,
+          "end": 21.33
+        },
+        {
+          "text": "OF",
+          "start": 21.33,
+          "end": 21.39
+        },
+        {
+          "text": "HIS",
+          "start": 21.39,
+          "end": 21.54
+        }
+      ]
+    },
+    {
+      "text": "PENALTY AREA, YASHIN CHANGED",
+      "start": 21.54,
+      "end": 23.66,
+      "words": [
+        {
+          "text": "PENALTY",
+          "start": 21.54,
+          "end": 21.99
+        },
+        {
+          "text": "AREA,",
+          "start": 21.99,
+          "end": 22.38
+        },
+        {
+          "text": "YASHIN",
+          "start": 22.69,
+          "end": 23.17
+        },
+        {
+          "text": "CHANGED",
+          "start": 23.17,
+          "end": 23.66
+        }
+      ]
+    },
+    {
+      "text": "THE WAY GOALKEEPERS PLAYED.",
+      "start": 23.66,
+      "end": 25.12,
+      "words": [
+        {
+          "text": "THE",
+          "start": 23.66,
+          "end": 23.73
+        },
+        {
+          "text": "WAY",
+          "start": 23.73,
+          "end": 23.93
+        },
+        {
+          "text": "GOALKEEPERS",
+          "start": 23.93,
+          "end": 24.54
+        },
+        {
+          "text": "PLAYED.",
+          "start": 24.54,
+          "end": 25.12
+        }
+      ]
+    },
+    {
+      "text": "MORE THAN SIXTY YEARS",
+      "start": 25.42,
+      "end": 26.52,
+      "words": [
+        {
+          "text": "MORE",
+          "start": 25.42,
+          "end": 25.58
+        },
+        {
+          "text": "THAN",
+          "start": 25.58,
+          "end": 25.74
+        },
+        {
+          "text": "SIXTY",
+          "start": 25.74,
+          "end": 26.26
+        },
+        {
+          "text": "YEARS",
+          "start": 26.26,
+          "end": 26.52
+        }
+      ]
+    },
+    {
+      "text": "LATER, HIS RECORD STILL",
+      "start": 26.52,
+      "end": 28.19,
+      "words": [
+        {
+          "text": "LATER,",
+          "start": 26.52,
+          "end": 27.0
+        },
+        {
+          "text": "HIS",
+          "start": 27.17,
+          "end": 27.35
+        },
+        {
+          "text": "RECORD",
+          "start": 27.35,
+          "end": 27.78
+        },
+        {
+          "text": "STILL",
+          "start": 27.78,
+          "end": 28.19
+        }
+      ]
+    },
+    {
+      "text": "STANDS.",
+      "start": 28.19,
+      "end": 28.86,
+      "words": [
+        {
+          "text": "STANDS.",
+          "start": 28.19,
+          "end": 28.86
+        }
+      ]
+    },
+    {
+      "text": "WHO'S NEXT?",
+      "start": 29.25,
+      "end": 30.11,
+      "words": [
+        {
+          "text": "WHO'S",
+          "start": 29.25,
+          "end": 29.56
+        },
+        {
+          "text": "NEXT?",
+          "start": 29.56,
+          "end": 30.11
+        }
+      ]
+    }
+  ],
+  "words": [
+    {
+      "text": "ONLY",
+      "start": 0.09,
+      "end": 0.37
+    },
+    {
+      "text": "ONE",
+      "start": 0.37,
+      "end": 0.83
+    },
+    {
+      "text": "GOALKEEPER",
+      "start": 0.83,
+      "end": 1.47
+    },
+    {
+      "text": "HAS",
+      "start": 1.47,
+      "end": 1.75
+    },
+    {
+      "text": "EVER",
+      "start": 1.75,
+      "end": 2.21
+    },
+    {
+      "text": "WON",
+      "start": 2.21,
+      "end": 2.44
+    },
+    {
+      "text": "THE",
+      "start": 2.44,
+      "end": 2.51
+    },
+    {
+      "text": "BALLON",
+      "start": 2.51,
+      "end": 2.88
+    },
+    {
+      "text": "D'OR.",
+      "start": 2.88,
+      "end": 3.16
+    },
+    {
+      "text": "NOT",
+      "start": 3.91,
+      "end": 4.15
+    },
+    {
+      "text": "BUFFON.",
+      "start": 4.15,
+      "end": 4.72
+    },
+    {
+      "text": "NOT",
+      "start": 5.22,
+      "end": 5.44
+    },
+    {
+      "text": "NEUER.",
+      "start": 5.44,
+      "end": 5.9
+    },
+    {
+      "text": "NOT",
+      "start": 6.5,
+      "end": 6.68
+    },
+    {
+      "text": "CASILLAS.",
+      "start": 6.68,
+      "end": 7.52
+    },
+    {
+      "text": "HIS",
+      "start": 8.07,
+      "end": 8.27
+    },
+    {
+      "text": "NAME",
+      "start": 8.27,
+      "end": 8.73
+    },
+    {
+      "text": "WAS",
+      "start": 8.73,
+      "end": 9.1
+    },
+    {
+      "text": "LEV",
+      "start": 9.1,
+      "end": 9.53
+    },
+    {
+      "text": "YASHIN.",
+      "start": 9.53,
+      "end": 10.26
+    },
+    {
+      "text": "IN",
+      "start": 10.71,
+      "end": 10.8
+    },
+    {
+      "text": "1963,",
+      "start": 10.8,
+      "end": 12.04
+    },
+    {
+      "text": "HE",
+      "start": 12.04,
+      "end": 12.36
+    },
+    {
+      "text": "ACHIEVED",
+      "start": 12.36,
+      "end": 12.71
+    },
+    {
+      "text": "SOMETHING",
+      "start": 12.71,
+      "end": 13.21
+    },
+    {
+      "text": "NO",
+      "start": 13.21,
+      "end": 13.6
+    },
+    {
+      "text": "OTHER",
+      "start": 13.6,
+      "end": 13.81
+    },
+    {
+      "text": "GOALKEEPER",
+      "start": 13.81,
+      "end": 14.43
+    },
+    {
+      "text": "HAS",
+      "start": 14.43,
+      "end": 14.73
+    },
+    {
+      "text": "EVER",
+      "start": 14.73,
+      "end": 15.01
+    },
+    {
+      "text": "MATCHED.",
+      "start": 15.01,
+      "end": 15.58
+    },
+    {
+      "text": "THEY",
+      "start": 15.95,
+      "end": 16.13
+    },
+    {
+      "text": "CALLED",
+      "start": 16.13,
+      "end": 16.54
+    },
+    {
+      "text": "HIM",
+      "start": 16.54,
+      "end": 16.91
+    },
+    {
+      "text": "THE",
+      "start": 16.91,
+      "end": 17.0
+    },
+    {
+      "text": "BLACK",
+      "start": 17.0,
+      "end": 17.49
+    },
+    {
+      "text": "SPIDER.",
+      "start": 17.49,
+      "end": 18.29
+    },
+    {
+      "text": "WITH",
+      "start": 18.58,
+      "end": 18.71
+    },
+    {
+      "text": "LIGHTNING-FAST",
+      "start": 18.71,
+      "end": 19.57
+    },
+    {
+      "text": "REFLEXES",
+      "start": 19.57,
+      "end": 20.2
+    },
+    {
+      "text": "AND",
+      "start": 20.2,
+      "end": 20.33
+    },
+    {
+      "text": "FEARLESS",
+      "start": 20.33,
+      "end": 20.89
+    },
+    {
+      "text": "CONTROL",
+      "start": 20.89,
+      "end": 21.33
+    },
+    {
+      "text": "OF",
+      "start": 21.33,
+      "end": 21.39
+    },
+    {
+      "text": "HIS",
+      "start": 21.39,
+      "end": 21.54
+    },
+    {
+      "text": "PENALTY",
+      "start": 21.54,
+      "end": 21.99
+    },
+    {
+      "text": "AREA,",
+      "start": 21.99,
+      "end": 22.38
+    },
+    {
+      "text": "YASHIN",
+      "start": 22.69,
+      "end": 23.17
+    },
+    {
+      "text": "CHANGED",
+      "start": 23.17,
+      "end": 23.66
+    },
+    {
+      "text": "THE",
+      "start": 23.66,
+      "end": 23.73
+    },
+    {
+      "text": "WAY",
+      "start": 23.73,
+      "end": 23.93
+    },
+    {
+      "text": "GOALKEEPERS",
+      "start": 23.93,
+      "end": 24.54
+    },
+    {
+      "text": "PLAYED.",
+      "start": 24.54,
+      "end": 25.12
+    },
+    {
+      "text": "MORE",
+      "start": 25.42,
+      "end": 25.58
+    },
+    {
+      "text": "THAN",
+      "start": 25.58,
+      "end": 25.74
+    },
+    {
+      "text": "SIXTY",
+      "start": 25.74,
+      "end": 26.26
+    },
+    {
+      "text": "YEARS",
+      "start": 26.26,
+      "end": 26.52
+    },
+    {
+      "text": "LATER,",
+      "start": 26.52,
+      "end": 27.0
+    },
+    {
+      "text": "HIS",
+      "start": 27.17,
+      "end": 27.35
+    },
+    {
+      "text": "RECORD",
+      "start": 27.35,
+      "end": 27.78
+    },
+    {
+      "text": "STILL",
+      "start": 27.78,
+      "end": 28.19
+    },
+    {
+      "text": "STANDS.",
+      "start": 28.19,
+      "end": 28.86
+    },
+    {
+      "text": "WHO'S",
+      "start": 29.25,
+      "end": 29.56
+    },
+    {
+      "text": "NEXT?",
+      "start": 29.56,
+      "end": 30.11
+    }
+  ],
+  "duration": 30.2759375,
+  "reliable": true,
+  "warnings": [],
+  "provenance": {
+    "method": "pocketsphinx-forced-alignment",
+    "model": "bundled-en-us",
+    "scriptSha256": "18e2aea9b451f8e9121465838446f07ecfbc675ac4b66c550700e94c5a3ac57d",
+    "timingResolutionMs": 10,
+    "audioSha256": "79cde08774a64f9455566dda7902142e3e79b1b0eca089016ed7b607c2756cad",
+    "requiresReview": true
+  }
+}

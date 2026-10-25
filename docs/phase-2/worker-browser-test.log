@@ -1,0 +1,9 @@
+
+Running 1 test using 1 worker
+
+(node:60816) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+  ✓  1 e2e/studio.spec.ts:311:1 › browser draft recovery, replacement formats, caption persistence, drag reorder and cancellation (6.1s)
+
+  1 passed (6.8s)

@@ -1,0 +1,393 @@
+{
+  "status": "passed",
+  "method": "Decode MP4 once; inspect active caption-color pixels in the subtitle region at each actual word midpoint. This checks rendered presence, not semantic or acoustic accuracy.",
+  "color": "#C4EC77",
+  "words": 64,
+  "uniqueFrames": 64,
+  "checks": [
+    {
+      "cue": 1,
+      "word": "ONLY",
+      "frame": 6,
+      "highlightPixels": 535
+    },
+    {
+      "cue": 1,
+      "word": "ONE",
+      "frame": 18,
+      "highlightPixels": 522
+    },
+    {
+      "cue": 1,
+      "word": "GOALKEEPER",
+      "frame": 34,
+      "highlightPixels": 1405
+    },
+    {
+      "cue": 1,
+      "word": "HAS",
+      "frame": 48,
+      "highlightPixels": 299
+    },
+    {
+      "cue": 2,
+      "word": "EVER",
+      "frame": 59,
+      "highlightPixels": 649
+    },
+    {
+      "cue": 2,
+      "word": "WON",
+      "frame": 69,
+      "highlightPixels": 592
+    },
+    {
+      "cue": 2,
+      "word": "THE",
+      "frame": 74,
+      "highlightPixels": 309
+    },
+    {
+      "cue": 2,
+      "word": "BALLON",
+      "frame": 80,
+      "highlightPixels": 567
+    },
+    {
+      "cue": 3,
+      "word": "D'OR.",
+      "frame": 90,
+      "highlightPixels": 430
+    },
+    {
+      "cue": 4,
+      "word": "NOT",
+      "frame": 120,
+      "highlightPixels": 518
+    },
+    {
+      "cue": 4,
+      "word": "BUFFON.",
+      "frame": 133,
+      "highlightPixels": 790
+    },
+    {
+      "cue": 5,
+      "word": "NOT",
+      "frame": 159,
+      "highlightPixels": 600
+    },
+    {
+      "cue": 5,
+      "word": "NEUER.",
+      "frame": 170,
+      "highlightPixels": 717
+    },
+    {
+      "cue": 6,
+      "word": "NOT",
+      "frame": 197,
+      "highlightPixels": 596
+    },
+    {
+      "cue": 6,
+      "word": "CASILLAS.",
+      "frame": 213,
+      "highlightPixels": 1007
+    },
+    {
+      "cue": 7,
+      "word": "HIS",
+      "frame": 245,
+      "highlightPixels": 485
+    },
+    {
+      "cue": 7,
+      "word": "NAME",
+      "frame": 255,
+      "highlightPixels": 782
+    },
+    {
+      "cue": 7,
+      "word": "WAS",
+      "frame": 267,
+      "highlightPixels": 416
+    },
+    {
+      "cue": 7,
+      "word": "LEV",
+      "frame": 279,
+      "highlightPixels": 283
+    },
+    {
+      "cue": 8,
+      "word": "YASHIN.",
+      "frame": 296,
+      "highlightPixels": 784
+    },
+    {
+      "cue": 9,
+      "word": "IN",
+      "frame": 322,
+      "highlightPixels": 196
+    },
+    {
+      "cue": 9,
+      "word": "1963,",
+      "frame": 342,
+      "highlightPixels": 503
+    },
+    {
+      "cue": 9,
+      "word": "HE",
+      "frame": 366,
+      "highlightPixels": 357
+    },
+    {
+      "cue": 9,
+      "word": "ACHIEVED",
+      "frame": 376,
+      "highlightPixels": 1036
+    },
+    {
+      "cue": 10,
+      "word": "SOMETHING",
+      "frame": 388,
+      "highlightPixels": 1413
+    },
+    {
+      "cue": 10,
+      "word": "NO",
+      "frame": 402,
+      "highlightPixels": 263
+    },
+    {
+      "cue": 10,
+      "word": "OTHER",
+      "frame": 411,
+      "highlightPixels": 826
+    },
+    {
+      "cue": 10,
+      "word": "GOALKEEPER",
+      "frame": 423,
+      "highlightPixels": 1314
+    },
+    {
+      "cue": 11,
+      "word": "HAS",
+      "frame": 437,
+      "highlightPixels": 396
+    },
+    {
+      "cue": 11,
+      "word": "EVER",
+      "frame": 446,
+      "highlightPixels": 632
+    },
+    {
+      "cue": 11,
+      "word": "MATCHED.",
+      "frame": 458,
+      "highlightPixels": 992
+    },
+    {
+      "cue": 12,
+      "word": "THEY",
+      "frame": 481,
+      "highlightPixels": 637
+    },
+    {
+      "cue": 12,
+      "word": "CALLED",
+      "frame": 490,
+      "highlightPixels": 767
+    },
+    {
+      "cue": 12,
+      "word": "HIM",
+      "frame": 501,
+      "highlightPixels": 545
+    },
+    {
+      "cue": 12,
+      "word": "THE",
+      "frame": 508,
+      "highlightPixels": 325
+    },
+    {
+      "cue": 13,
+      "word": "BLACK",
+      "frame": 517,
+      "highlightPixels": 722
+    },
+    {
+      "cue": 13,
+      "word": "SPIDER.",
+      "frame": 536,
+      "highlightPixels": 822
+    },
+    {
+      "cue": 14,
+      "word": "WITH",
+      "frame": 559,
+      "highlightPixels": 747
+    },
+    {
+      "cue": 14,
+      "word": "LIGHTNING-FAST",
+      "frame": 574,
+      "highlightPixels": 1911
+    },
+    {
+      "cue": 14,
+      "word": "REFLEXES",
+      "frame": 596,
+      "highlightPixels": 1065
+    },
+    {
+      "cue": 14,
+      "word": "AND",
+      "frame": 607,
+      "highlightPixels": 387
+    },
+    {
+      "cue": 15,
+      "word": "FEARLESS",
+      "frame": 618,
+      "highlightPixels": 928
+    },
+    {
+      "cue": 15,
+      "word": "CONTROL",
+      "frame": 633,
+      "highlightPixels": 909
+    },
+    {
+      "cue": 15,
+      "word": "OF",
+      "frame": 640,
+      "highlightPixels": 207
+    },
+    {
+      "cue": 15,
+      "word": "HIS",
+      "frame": 643,
+      "highlightPixels": 303
+    },
+    {
+      "cue": 16,
+      "word": "PENALTY",
+      "frame": 652,
+      "highlightPixels": 939
+    },
+    {
+      "cue": 16,
+      "word": "AREA,",
+      "frame": 665,
+      "highlightPixels": 583
+    },
+    {
+      "cue": 16,
+      "word": "YASHIN",
+      "frame": 687,
+      "highlightPixels": 732
+    },
+    {
+      "cue": 16,
+      "word": "CHANGED",
+      "frame": 702,
+      "highlightPixels": 1070
+    },
+    {
+      "cue": 17,
+      "word": "THE",
+      "frame": 710,
+      "highlightPixels": 454
+    },
+    {
+      "cue": 17,
+      "word": "WAY",
+      "frame": 714,
+      "highlightPixels": 388
+    },
+    {
+      "cue": 17,
+      "word": "GOALKEEPERS",
+      "frame": 727,
+      "highlightPixels": 1432
+    },
+    {
+      "cue": 17,
+      "word": "PLAYED.",
+      "frame": 744,
+      "highlightPixels": 739
+    },
+    {
+      "cue": 18,
+      "word": "MORE",
+      "frame": 765,
+      "highlightPixels": 909
+    },
+    {
+      "cue": 18,
+      "word": "THAN",
+      "frame": 769,
+      "highlightPixels": 560
+    },
+    {
+      "cue": 18,
+      "word": "SIXTY",
+      "frame": 780,
+      "highlightPixels": 450
+    },
+    {
+      "cue": 18,
+      "word": "YEARS",
+      "frame": 791,
+      "highlightPixels": 600
+    },
+    {
+      "cue": 19,
+      "word": "LATER,",
+      "frame": 802,
+      "highlightPixels": 713
+    },
+    {
+      "cue": 19,
+      "word": "HIS",
+      "frame": 817,
+      "highlightPixels": 318
+    },
+    {
+      "cue": 19,
+      "word": "RECORD",
+      "frame": 826,
+      "highlightPixels": 914
+    },
+    {
+      "cue": 19,
+      "word": "STILL",
+      "frame": 839,
+      "highlightPixels": 413
+    },
+    {
+      "cue": 20,
+      "word": "STANDS.",
+      "frame": 855,
+      "highlightPixels": 888
+    },
+    {
+      "cue": 21,
+      "word": "WHO'S",
+      "frame": 882,
+      "highlightPixels": 860
+    },
+    {
+      "cue": 21,
+      "word": "NEXT?",
+      "frame": 895,
+      "highlightPixels": 606
+    }
+  ]
+}

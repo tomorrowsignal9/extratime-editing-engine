@@ -137,6 +137,28 @@ export async function saveProject(key: string, input: unknown) {
               400,
               "Scene references an asset outside this project.",
             );
+      for (const layer of m.soundLayers || []) {
+        const sound = p.assets.find(
+          (a) => a.kind === "sound" && a.path === layer.asset,
+        );
+        if (!sound || !sound.license || !sound.peak || !audio.rms)
+          throw new HttpError(
+            400,
+            "Sound layers require project-owned licensed audio and measured voiceover levels.",
+          );
+        if (!layer.loop && layer.duration > sound.duration! + 0.034)
+          throw new HttpError(
+            400,
+            "Enable looping or shorten the sound layer to its source duration.",
+          );
+        Object.assign(layer, {
+          license: sound.license,
+          attribution: sound.attribution,
+          sourcePeak: sound.peak,
+          sourceDuration: sound.duration,
+          narrationRms: audio.rms,
+        });
+      }
       if (m.id !== key) throw new HttpError(400, "Project identity mismatch");
       p.manifest = { ...m, title: body.title, approved: false };
       p.captions = m.captions;
@@ -159,6 +181,11 @@ export async function ingest(
   files: { name: string; bytes: Buffer }[],
   version: number,
   replace?: string,
+  sound?: {
+    category: "whoosh" | "impact" | "riser" | "stadium" | "music";
+    license: string;
+    attribution?: string;
+  },
 ) {
   return locked(key, async () => {
     const p = await readProject(key);
@@ -182,6 +209,8 @@ export async function ingest(
             400,
             "Supported files: JPG, PNG, WebP, MP3, WAV and SRT.",
           );
+        if (sound && kind !== "audio")
+          throw new HttpError(400, "Sound layers must be MP3 or WAV audio.");
         const limit =
           kind === "image"
             ? 20 * 1024 * 1024
@@ -269,6 +298,25 @@ export async function ingest(
               400,
               "Voiceover must contain audio and last 0.2–300 seconds.",
             );
+          const measured = await audioStats(target);
+          a.peak = measured.peak;
+          a.rms = measured.rms;
+          if (sound) {
+            if (
+              !sound.license.trim() ||
+              (sound.license.includes("CC BY") && !sound.attribution?.trim())
+            )
+              throw new HttpError(
+                400,
+                "Provide the sound license and required attribution.",
+              );
+            a.kind = "sound";
+            a.category = sound.category;
+            a.license = sound.license;
+            a.attribution = sound.attribution;
+            if (measured.peak < 0.0001)
+              throw new HttpError(400, "Sound asset is silent.");
+          }
         } else
           p.captions = parseSrt(
             file.bytes.toString("utf8").replace(/^\uFEFF/, ""),
@@ -292,6 +340,23 @@ export async function ingest(
       }
       p.assets.push(...added);
       const audio = [...p.assets].reverse().find((a) => a.kind === "audio");
+      if (sound && audio && !audio.rms) {
+        const measured = await audioStats(path.join(publicRoot, audio.path));
+        audio.rms = measured.rms;
+        audio.peak = measured.peak;
+      }
+      if (added.some((a) => a.kind === "audio")) {
+        p.captions = p.captions.map((c) => ({ ...c, words: undefined }));
+        if (p.manifest) {
+          p.manifest.captionTiming = undefined;
+          p.manifest.soundLayers = (p.manifest.soundLayers || []).map((l) => ({
+            ...l,
+            enabled: false,
+            narrationRms: Math.max(audio?.rms || 0.0001, 0.0001),
+          }));
+        }
+      }
+
       let scenes = p.manifest?.scenes || [];
       const incoming = added.filter((a) => a.kind === "image");
       if (!replace && incoming.length)
@@ -399,4 +464,33 @@ export async function importSample() {
       })),
     },
   });
+}
+
+export async function audioStats(file: string) {
+  const { stdout } = await exec(
+    "ffmpeg",
+    [
+      "-v",
+      "error",
+      "-i",
+      file,
+      "-vn",
+      "-ac",
+      "1",
+      "-ar",
+      "8000",
+      "-f",
+      "f32le",
+      "pipe:1",
+    ],
+    { encoding: "buffer", timeout: 30000, maxBuffer: 12 * 1024 * 1024 },
+  );
+  let peak = 0,
+    sum = 0;
+  for (let i = 0; i < stdout.length; i += 4) {
+    const v = stdout.readFloatLE(i);
+    peak = Math.max(peak, Math.abs(v));
+    sum += v * v;
+  }
+  return { peak: Math.min(1, peak), rms: Math.sqrt(sum / (stdout.length / 4)) };
 }

@@ -1,0 +1,21 @@
+{
+  "localCopyImported": true,
+  "listedModel": {
+    "alignment": [
+      {
+        "id": "bundled-en-us",
+        "label": "PocketSphinx English (bundled, offline)"
+      },
+      {
+        "id": "local-english",
+        "label": "local-english"
+      }
+    ],
+    "transcription": [],
+    "downloadsDuringProcessing": false
+  },
+  "duplicateImportRejected": true,
+  "networkUsedForImport": false,
+  "importedModelInferencePassed": true,
+  "timingsMatchBundledModel": true
+}
